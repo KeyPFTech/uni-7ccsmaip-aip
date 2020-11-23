@@ -1,0 +1,120 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.96s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./tidybot-domain.pddl ./instances/tidybot-instance17.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.009s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.020s CPU, 0.029s wall-clock]
+Preparing model... [0.010s CPU, 0.010s wall-clock]
+Generated 400 rules.
+Computing model... [1.860s CPU, 1.852s wall-clock]
+63905 relevant atoms
+47860 auxiliary atoms
+111765 final queue length
+330256 total queue pushes
+Completing instantiation... [6.310s CPU, 6.315s wall-clock]
+Instantiating: [8.230s CPU, 8.240s wall-clock]
+Computing fact groups...
+Finding invariants...
+41 initial candidates
+Finding invariants: [0.130s CPU, 0.131s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+555 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.003s wall-clock]
+Computing fact groups: [0.140s CPU, 0.141s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.001s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.310s CPU, 0.308s wall-clock]
+Translating task: [7.910s CPU, 7.909s wall-clock]
+182823 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+2 propositions removed
+Detecting unreachable propositions: [3.910s CPU, 3.903s wall-clock]
+Reordering and filtering variables...
+557 of 557 variables necessary.
+1 of 3 mutex groups necessary.
+63131 of 63131 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [1.950s CPU, 1.951s wall-clock]
+Translator variables: 557
+Translator derived variables: 0
+Translator facts: 1117
+Translator goal facts: 4
+Translator mutex groups: 1
+Translator total mutex groups size: 2
+Translator operators: 63131
+Translator axioms: 0
+Translator task size: 783462
+Translator peak memory: 458040 KB
+Writing output... [1.530s CPU, 1.523s wall-clock]
+Done! [23.880s CPU, 23.884s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1775.92s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(merge_and_shrink(merge_strategy=merge_sccs(order_of_sccs=topological,merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order])),shrink_strategy=shrink_bisimulation(greedy=false)))' --internal-plan-file sas_plan < output.sas
+[t=0s, 55860 KB] reading input...
+[t=0.443984s, 85144 KB] done reading input!
+[t=0.447986s, 85544 KB] Initializing merge-and-shrink heuristic...
+[t=0.447986s, 85544 KB] Running merge-and-shrink algorithm...
+[t=0.447986s, 85544 KB] Merge strategy options:
+[t=0.447986s, 85544 KB] Type: sccs
+[t=0.447986s, 85544 KB] Merge order of sccs: topological
+[t=0.447986s, 85544 KB] Merge strategy for merging within sccs: 
+[t=0.447986s, 85544 KB] Merge selector options:
+[t=0.447986s, 85544 KB] Name: score based filtering
+[t=0.447986s, 85544 KB] Merge scoring function:
+[t=0.447986s, 85544 KB] Name: goal relevance
+[t=0.447986s, 85544 KB] Merge scoring function:
+[t=0.447986s, 85544 KB] Name: dfp
+[t=0.447986s, 85544 KB] Merge scoring function:
+[t=0.447986s, 85544 KB] Name: total order
+[t=0.447986s, 85544 KB] Atomic transition system order: reverse level
+[t=0.447986s, 85544 KB] Product transition system order: new to old
+[t=0.447986s, 85544 KB] Consider product before atomic transition systems
+[t=0.447986s, 85544 KB] Random seed: -1
+
+[t=0.447986s, 85544 KB] Options related to size limits and shrinking: 
+[t=0.447986s, 85544 KB] Transition system size limit: 50000
+[t=0.447986s, 85544 KB] Transition system size limit right before merge: 50000
+[t=0.447986s, 85544 KB] Threshold to trigger shrinking right before merge: 50000
+
+[t=0.447986s, 85544 KB] Pruning unreachable states: yes
+[t=0.447986s, 85544 KB] Pruning irrelevant states: yes
+
+[t=0.447986s, 85544 KB] Label reduction disabled
+
+[t=0.447986s, 85544 KB] Main loop max time in seconds: inf
+
+[t=0.447986s, 85544 KB] ===============================================================================
+[t=0.447986s, 85544 KB] WARNING! You did not enable label reduction.
+This may drastically reduce the performance of merge-and-shrink!
+[t=0.447986s, 85544 KB] ===============================================================================
+
+[t=0.447986s, 85544 KB] Building atomic transition systems... 
+Failed to allocate memory.
+Memory limit has been reached.
+Peak memory: 2094352 KB
+Remove intermediate file output.sas
+search exit code: 22
+
+Driver aborting after search
