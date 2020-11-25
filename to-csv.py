@@ -38,7 +38,7 @@ def readFile(name):
     #stats=stats[:-1]
     return stats
 
-# removes redundant infor of timestep at the beginning and/or the whitespace at the end 
+# removes redundant infor of timestep at the beginning and/or the whitespace at the end
 def organise(stats):
     for num, info in enumerate(stats):
         #print("this: ", i) #i of type str
@@ -47,7 +47,7 @@ def organise(stats):
         if num < 17:
             search = info.find("] ")
             start_search = search+2
-            update = info[start_search:-1] # makes character selction  
+            update = info[start_search:-1] # makes character selction
         else:
             update = info[:-1]
 
@@ -71,7 +71,7 @@ def switcher(col_val, data):
         4: data[10 : -10], # Evaluated state(s)
         5: data[13 : len(data)], # Evaluations
         6: data[10 : -10], # Generates state(s)
-        7: data[11 : -10], # Deadends 
+        7: data[11 : -10], # Deadends
         8: data[26 :-10], # Expanded until last jump
         9: data[26 : -10], # Reopened until last jump
         10: data[27 : -10], # Evaluated until last jump
@@ -89,7 +89,7 @@ def switcher(col_val, data):
     return switch.get(col_val, None)
 
 
-# TODO 
+# TODO
 def remove_fluff(stats):
     for col, data in enumerate(stats):
         update = ""
@@ -108,20 +108,20 @@ def remove_fluff(stats):
             print("--Updated: ", update, ", Type: ", type(update))
             #print("Helloooooo")
         else:
-            n_data = switcher(col, data) 
+            n_data = switcher(col, data)
             #print("New data: ", n_data)
             update = int(n_data) #string
             print("--Updated: ", n_data, ", Type: ", type(update))
 
         stats[col] = update
-    
+
     print(stats)
 
     """
     for row in enumerate(stats):
         for col, info_item in enumerate(stats):
             stats = switcher(col, info_item)
-    """      
+    """
     return stats
 
 

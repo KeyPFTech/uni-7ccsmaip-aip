@@ -1,0 +1,1464 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1799.95s
+INFO     translator memory limit: 2048 MB
+INFO     translator command line string: /usr/bin/python3 /src/fd/builds/release/bin/translate/translate.py ./tidybot-domain.pddl ./instances-optimal/tidybot-instance11.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.010s CPU, 0.009s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.002s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.030s CPU, 0.029s wall-clock]
+Preparing model... [0.010s CPU, 0.010s wall-clock]
+Generated 400 rules.
+Computing model... [0.710s CPU, 0.702s wall-clock]
+19710 relevant atoms
+25207 auxiliary atoms
+44917 final queue length
+106179 total queue pushes
+Completing instantiation... [1.790s CPU, 1.792s wall-clock]
+Instantiating: [2.550s CPU, 2.547s wall-clock]
+Computing fact groups...
+Finding invariants...
+41 initial candidates
+Finding invariants: [0.050s CPU, 0.053s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+291 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.002s wall-clock]
+Computing fact groups: [0.060s CPU, 0.058s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.090s CPU, 0.091s wall-clock]
+Translating task: [2.260s CPU, 2.262s wall-clock]
+49953 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+2 propositions removed
+Detecting unreachable propositions: [1.070s CPU, 1.069s wall-clock]
+Reordering and filtering variables...
+293 of 293 variables necessary.
+1 of 3 mutex groups necessary.
+19255 of 19255 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.500s CPU, 0.497s wall-clock]
+Translator variables: 293
+Translator derived variables: 0
+Translator facts: 589
+Translator goal facts: 4
+Translator mutex groups: 1
+Translator total mutex groups size: 2
+Translator operators: 19255
+Translator axioms: 0
+Translator task size: 228164
+Translator peak memory: 163192 KB
+Writing output... [0.410s CPU, 0.415s wall-clock]
+Done! [6.910s CPU, 6.917s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 1792.93s
+INFO     search memory limit: 2048 MB
+INFO     search command line string: /src/fd/builds/release/bin/downward --search 'astar(merge_and_shrink(merge_strategy=merge_sccs(order_of_sccs=topological,merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order])),shrink_strategy=shrink_bisimulation(greedy=false)))' --internal-plan-file sas_plan < output.sas
+[t=0s, 55860 KB] reading input...
+[t=0.13048s, 64400 KB] done reading input!
+[t=0.13048s, 64796 KB] Initializing merge-and-shrink heuristic...
+[t=0.13048s, 64796 KB] Running merge-and-shrink algorithm...
+[t=0.13048s, 64796 KB] Merge strategy options:
+[t=0.13048s, 64796 KB] Type: sccs
+[t=0.13048s, 64796 KB] Merge order of sccs: topological
+[t=0.13048s, 64796 KB] Merge strategy for merging within sccs: 
+[t=0.13048s, 64796 KB] Merge selector options:
+[t=0.13048s, 64796 KB] Name: score based filtering
+[t=0.13048s, 64796 KB] Merge scoring function:
+[t=0.13048s, 64796 KB] Name: goal relevance
+[t=0.13048s, 64796 KB] Merge scoring function:
+[t=0.13048s, 64796 KB] Name: dfp
+[t=0.13048s, 64796 KB] Merge scoring function:
+[t=0.13048s, 64796 KB] Name: total order
+[t=0.13048s, 64796 KB] Atomic transition system order: reverse level
+[t=0.13048s, 64796 KB] Product transition system order: new to old
+[t=0.13048s, 64796 KB] Consider product before atomic transition systems
+[t=0.13048s, 64796 KB] Random seed: -1
+
+[t=0.13048s, 64796 KB] Options related to size limits and shrinking: 
+[t=0.13048s, 64796 KB] Transition system size limit: 50000
+[t=0.13048s, 64796 KB] Transition system size limit right before merge: 50000
+[t=0.13048s, 64796 KB] Threshold to trigger shrinking right before merge: 50000
+
+[t=0.13048s, 64796 KB] Pruning unreachable states: yes
+[t=0.13048s, 64796 KB] Pruning irrelevant states: yes
+
+[t=0.13048s, 64796 KB] Label reduction disabled
+
+[t=0.13048s, 64796 KB] Main loop max time in seconds: inf
+
+[t=0.13048s, 64796 KB] ===============================================================================
+[t=0.13048s, 64796 KB] WARNING! You did not enable label reduction.
+This may drastically reduce the performance of merge-and-shrink!
+[t=0.13048s, 64796 KB] ===============================================================================
+
+[t=0.13048s, 64796 KB] Building atomic transition systems... 
+[t=0.482453s, 1076756 KB] M&S algorithm timer: 0.351973s (after computation of atomic factors)
+
+[t=0.482453s, 1076756 KB] Starting main loop without a time limit.
+[t=0.482453s, 1076756 KB] building causal graph...done! [t=0.0839923s]
+[t=0.578448s, 1076756 KB] SCCs of the causal graph:
+[t=0.578448s, 1076756 KB] [0, 1, 5, 13, 21, 22, 15, 7, 2, 8, 16, 25, 26, 19, 11, 4, 12, 20, 28, 27, 18, 10, 3, 9, 17, 24, 23, 14, 6, 29, 33, 41, 42, 35, 30, 36, 46, 54, 53, 43, 34, 44, 45, 37, 31, 38, 49, 57, 50, 51, 40, 32, 39, 48, 47, 55, 56, 52, 58, 60, 59, 77, 61, 88, 65, 288, 62, 89, 66, 290, 67, 90, 63, 71, 291, 69, 70, 72, 91, 64, 68, 76, 292, 73, 74, 75, 78, 81, 85, 82, 79, 84, 80, 83, 284, 285, 286, 287, 289, 86, 87, 92, 96, 93, 97, 94, 98, 95, 99, 100, 101, 102, 103, 105, 104, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 117, 116, 118, 119, 120, 121, 122, 123, 125, 124, 126, 127, 128, 129, 130, 131, 132, 133, 135, 134, 136, 138, 137, 140, 139, 142, 141, 145, 143, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 169, 168, 170, 171, 172, 173, 174, 175, 177, 176, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 194, 193, 196, 195, 198, 197, 201, 199, 200, 202, 203, 204, 205, 206, 207, 208, 209, 210, 212, 211, 213, 214, 215, 216, 218, 217, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 250, 249, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 275, 274, 276, 277, 278, 279, 280, 281, 282, 283]
+[t=0.578448s, 1076756 KB] Only one single SCC
+[t=0.622446s, 1076756 KB] Next pair of indices: (61, 289)
+[t=0.622446s, 1076756 KB] M&S algorithm main loop timer: 0.139993s (after computation of next merge)
+[t=0.622446s, 1076756 KB] M&S algorithm main loop timer: 0.139993s (after merging)
+[t=0.622446s, 1076756 KB] M&S algorithm main loop timer: 0.139993s (after pruning)
+
+[t=0.670427s, 1076756 KB] Next pair of indices: (0, 293)
+[t=0.670427s, 1076756 KB] M&S algorithm main loop timer: 0.187974s (after computation of next merge)
+[t=0.670427s, 1076756 KB] M&S algorithm main loop timer: 0.187974s (after merging)
+
+[t=0.742427s, 1076756 KB] Next pair of indices: (1, 294)
+[t=0.742427s, 1076756 KB] M&S algorithm main loop timer: 0.259974s (after computation of next merge)
+[t=0.746428s, 1076756 KB] M&S algorithm main loop timer: 0.263975s (after merging)
+
+[t=0.818428s, 1076756 KB] Next pair of indices: (2, 295)
+[t=0.818428s, 1076756 KB] M&S algorithm main loop timer: 0.335975s (after computation of next merge)
+[t=0.822429s, 1076756 KB] M&S algorithm main loop timer: 0.339976s (after merging)
+
+[t=0.894403s, 1076756 KB] Next pair of indices: (3, 296)
+[t=0.894403s, 1076756 KB] M&S algorithm main loop timer: 0.41195s (after computation of next merge)
+[t=0.894403s, 1076756 KB] M&S algorithm main loop timer: 0.41195s (after merging)
+
+[t=0.970395s, 1076756 KB] Next pair of indices: (4, 297)
+[t=0.970395s, 1076756 KB] M&S algorithm main loop timer: 0.487942s (after computation of next merge)
+[t=0.970395s, 1076756 KB] M&S algorithm main loop timer: 0.487942s (after merging)
+
+[t=1.0424s, 1076756 KB] Next pair of indices: (5, 298)
+[t=1.0424s, 1076756 KB] M&S algorithm main loop timer: 0.559943s (after computation of next merge)
+[t=1.0464s, 1076756 KB] M&S algorithm main loop timer: 0.563945s (after merging)
+
+[t=1.11802s, 1076756 KB] Next pair of indices: (6, 299)
+[t=1.11802s, 1076756 KB] M&S algorithm main loop timer: 0.635568s (after computation of next merge)
+[t=1.11802s, 1076756 KB] M&S algorithm main loop timer: 0.635568s (after merging)
+
+[t=1.19002s, 1076756 KB] Next pair of indices: (7, 300)
+[t=1.19002s, 1076756 KB] M&S algorithm main loop timer: 0.707568s (after computation of next merge)
+[t=1.19402s, 1076756 KB] M&S algorithm main loop timer: 0.71157s (after merging)
+
+[t=1.26202s, 1076756 KB] Next pair of indices: (8, 301)
+[t=1.26202s, 1076756 KB] M&S algorithm main loop timer: 0.779568s (after computation of next merge)
+[t=1.26602s, 1076756 KB] M&S algorithm main loop timer: 0.78357s (after merging)
+
+[t=1.33802s, 1076756 KB] Next pair of indices: (9, 302)
+[t=1.33802s, 1076756 KB] M&S algorithm main loop timer: 0.855564s (after computation of next merge)
+[t=1.34202s, 1076756 KB] M&S algorithm main loop timer: 0.859568s (after merging)
+
+[t=1.41002s, 1076756 KB] Next pair of indices: (10, 303)
+[t=1.41002s, 1076756 KB] M&S algorithm main loop timer: 0.927565s (after computation of next merge)
+[t=1.41802s, 1076756 KB] M&S algorithm main loop timer: 0.935567s (after merging)
+
+[t=1.48599s, 1076756 KB] Next pair of indices: (11, 304)
+[t=1.48599s, 1076756 KB] M&S algorithm main loop timer: 1.00354s (after computation of next merge)
+[t=1.49799s, 1076756 KB] M&S algorithm main loop timer: 1.01554s (after merging)
+
+[t=1.56999s, 1076756 KB] Next pair of indices: (12, 305)
+[t=1.56999s, 1076756 KB] M&S algorithm main loop timer: 1.08754s (after computation of next merge)
+[t=1.59s, 1076756 KB] M&S algorithm main loop timer: 1.10754s (after merging)
+
+[t=1.66199s, 1076756 KB] Next pair of indices: (13, 306)
+[t=1.66199s, 1076756 KB] M&S algorithm main loop timer: 1.17954s (after computation of next merge)
+[t=1.71s, 1076756 KB] M&S algorithm main loop timer: 1.22755s (after merging)
+
+[t=1.78599s, 1076756 KB] Next pair of indices: (14, 307)
+[t=1.78599s, 1076756 KB] M&S algorithm main loop timer: 1.30354s (after computation of next merge)
+[t=1.938s, 1076756 KB] M&S algorithm main loop timer: 1.45555s (after shrinking)
+[t=2.03797s, 1076756 KB] M&S algorithm main loop timer: 1.55552s (after merging)
+
+[t=2.10996s, 1076756 KB] Next pair of indices: (15, 308)
+[t=2.11396s, 1076756 KB] M&S algorithm main loop timer: 1.63151s (after computation of next merge)
+[t=2.26994s, 1076756 KB] M&S algorithm main loop timer: 1.78748s (after shrinking)
+[t=2.33793s, 1076756 KB] M&S algorithm main loop timer: 1.85547s (after merging)
+
+[t=2.40592s, 1076756 KB] Next pair of indices: (16, 309)
+[t=2.40592s, 1076756 KB] M&S algorithm main loop timer: 1.92347s (after computation of next merge)
+[t=2.49792s, 1076756 KB] M&S algorithm main loop timer: 2.01547s (after shrinking)
+[t=2.49792s, 1076756 KB] M&S algorithm main loop timer: 2.01547s (after merging)
+
+[t=2.56191s, 1076756 KB] Next pair of indices: (17, 310)
+[t=2.56191s, 1076756 KB] M&S algorithm main loop timer: 2.07946s (after computation of next merge)
+[t=2.56191s, 1076756 KB] M&S algorithm main loop timer: 2.07946s (after merging)
+
+[t=2.62591s, 1076756 KB] Next pair of indices: (18, 311)
+[t=2.62591s, 1076756 KB] M&S algorithm main loop timer: 2.14346s (after computation of next merge)
+[t=2.62992s, 1076756 KB] M&S algorithm main loop timer: 2.14746s (after merging)
+
+[t=2.68991s, 1076756 KB] Next pair of indices: (19, 312)
+[t=2.68991s, 1076756 KB] M&S algorithm main loop timer: 2.20745s (after computation of next merge)
+[t=2.69391s, 1076756 KB] M&S algorithm main loop timer: 2.21146s (after merging)
+
+[t=2.75391s, 1076756 KB] Next pair of indices: (20, 313)
+[t=2.75391s, 1076756 KB] M&S algorithm main loop timer: 2.27145s (after computation of next merge)
+[t=2.75791s, 1076756 KB] M&S algorithm main loop timer: 2.27546s (after merging)
+
+[t=2.81791s, 1076756 KB] Next pair of indices: (21, 314)
+[t=2.81791s, 1076756 KB] M&S algorithm main loop timer: 2.33545s (after computation of next merge)
+[t=2.82191s, 1076756 KB] M&S algorithm main loop timer: 2.33946s (after merging)
+
+[t=2.88191s, 1076756 KB] Next pair of indices: (22, 315)
+[t=2.88191s, 1076756 KB] M&S algorithm main loop timer: 2.39945s (after computation of next merge)
+[t=2.88191s, 1076756 KB] M&S algorithm main loop timer: 2.40346s (after merging)
+
+[t=2.9459s, 1076756 KB] Next pair of indices: (23, 316)
+[t=2.9459s, 1076756 KB] M&S algorithm main loop timer: 2.46345s (after computation of next merge)
+[t=2.9459s, 1076756 KB] M&S algorithm main loop timer: 2.46345s (after merging)
+
+[t=3.00589s, 1076756 KB] Next pair of indices: (24, 317)
+[t=3.00989s, 1076756 KB] M&S algorithm main loop timer: 2.52744s (after computation of next merge)
+[t=3.00989s, 1076756 KB] M&S algorithm main loop timer: 2.53144s (after merging)
+
+[t=3.07389s, 1076756 KB] Next pair of indices: (25, 318)
+[t=3.07389s, 1076756 KB] M&S algorithm main loop timer: 2.59144s (after computation of next merge)
+[t=3.07789s, 1076756 KB] M&S algorithm main loop timer: 2.59544s (after merging)
+
+[t=3.13752s, 1076756 KB] Next pair of indices: (26, 319)
+[t=3.13752s, 1076756 KB] M&S algorithm main loop timer: 2.65507s (after computation of next merge)
+[t=3.14953s, 1076756 KB] M&S algorithm main loop timer: 2.66707s (after merging)
+
+[t=3.20952s, 1076756 KB] Next pair of indices: (27, 320)
+[t=3.20952s, 1076756 KB] M&S algorithm main loop timer: 2.72707s (after computation of next merge)
+[t=3.23353s, 1076756 KB] M&S algorithm main loop timer: 2.75107s (after merging)
+
+[t=3.29751s, 1076756 KB] Next pair of indices: (28, 321)
+[t=3.29751s, 1076756 KB] M&S algorithm main loop timer: 2.81506s (after computation of next merge)
+[t=3.35351s, 1076756 KB] M&S algorithm main loop timer: 2.87106s (after merging)
+
+[t=3.41351s, 1076756 KB] Next pair of indices: (29, 322)
+[t=3.41351s, 1076756 KB] M&S algorithm main loop timer: 2.93105s (after computation of next merge)
+[t=3.58149s, 1076756 KB] M&S algorithm main loop timer: 3.09903s (after shrinking)
+[t=3.69749s, 1076756 KB] M&S algorithm main loop timer: 3.21504s (after merging)
+
+[t=3.76148s, 1076756 KB] Next pair of indices: (30, 323)
+[t=3.76148s, 1076756 KB] M&S algorithm main loop timer: 3.27903s (after computation of next merge)
+[t=3.94948s, 1076756 KB] M&S algorithm main loop timer: 3.46702s (after shrinking)
+[t=4.02148s, 1076756 KB] M&S algorithm main loop timer: 3.53903s (after merging)
+
+[t=4.08545s, 1076756 KB] Next pair of indices: (31, 324)
+[t=4.08545s, 1076756 KB] M&S algorithm main loop timer: 3.603s (after computation of next merge)
+[t=4.20544s, 1076756 KB] M&S algorithm main loop timer: 3.72298s (after shrinking)
+[t=4.20944s, 1076756 KB] M&S algorithm main loop timer: 3.72698s (after merging)
+
+[t=4.26543s, 1076756 KB] Next pair of indices: (32, 325)
+[t=4.26543s, 1076756 KB] M&S algorithm main loop timer: 3.78298s (after computation of next merge)
+[t=4.26944s, 1076756 KB] M&S algorithm main loop timer: 3.78698s (after merging)
+
+[t=4.32543s, 1076756 KB] Next pair of indices: (33, 326)
+[t=4.32543s, 1076756 KB] M&S algorithm main loop timer: 3.84298s (after computation of next merge)
+[t=4.32944s, 1076756 KB] M&S algorithm main loop timer: 3.84698s (after merging)
+
+[t=4.38541s, 1076756 KB] Next pair of indices: (34, 327)
+[t=4.38541s, 1076756 KB] M&S algorithm main loop timer: 3.90296s (after computation of next merge)
+[t=4.38942s, 1076756 KB] M&S algorithm main loop timer: 3.90696s (after merging)
+
+[t=4.44541s, 1076756 KB] Next pair of indices: (35, 328)
+[t=4.44541s, 1076756 KB] M&S algorithm main loop timer: 3.96296s (after computation of next merge)
+[t=4.44541s, 1076756 KB] M&S algorithm main loop timer: 3.96296s (after merging)
+
+[t=4.50141s, 1076756 KB] Next pair of indices: (36, 329)
+[t=4.50541s, 1076756 KB] M&S algorithm main loop timer: 4.02296s (after computation of next merge)
+[t=4.50541s, 1076756 KB] M&S algorithm main loop timer: 4.02296s (after merging)
+
+[t=4.56141s, 1076756 KB] Next pair of indices: (37, 330)
+[t=4.56141s, 1076756 KB] M&S algorithm main loop timer: 4.07896s (after computation of next merge)
+[t=4.56542s, 1076756 KB] M&S algorithm main loop timer: 4.08297s (after merging)
+
+[t=4.62141s, 1076756 KB] Next pair of indices: (38, 331)
+[t=4.62141s, 1076756 KB] M&S algorithm main loop timer: 4.13895s (after computation of next merge)
+[t=4.62541s, 1076756 KB] M&S algorithm main loop timer: 4.14296s (after merging)
+
+[t=4.6814s, 1076756 KB] Next pair of indices: (39, 332)
+[t=4.6814s, 1076756 KB] M&S algorithm main loop timer: 4.19894s (after computation of next merge)
+[t=4.6854s, 1076756 KB] M&S algorithm main loop timer: 4.20295s (after merging)
+
+[t=4.7414s, 1076756 KB] Next pair of indices: (40, 333)
+[t=4.7414s, 1076756 KB] M&S algorithm main loop timer: 4.25894s (after computation of next merge)
+[t=4.7454s, 1076756 KB] M&S algorithm main loop timer: 4.26295s (after merging)
+
+[t=4.8014s, 1076756 KB] Next pair of indices: (41, 334)
+[t=4.8014s, 1076756 KB] M&S algorithm main loop timer: 4.31894s (after computation of next merge)
+[t=4.8134s, 1076756 KB] M&S algorithm main loop timer: 4.33095s (after merging)
+
+[t=4.8694s, 1076756 KB] Next pair of indices: (42, 335)
+[t=4.8694s, 1076756 KB] M&S algorithm main loop timer: 4.38694s (after computation of next merge)
+[t=4.8934s, 1076756 KB] M&S algorithm main loop timer: 4.41095s (after merging)
+
+[t=4.94939s, 1076756 KB] Next pair of indices: (43, 336)
+[t=4.94939s, 1076756 KB] M&S algorithm main loop timer: 4.46693s (after computation of next merge)
+[t=5.00539s, 1076756 KB] M&S algorithm main loop timer: 4.52294s (after merging)
+
+[t=5.06539s, 1076756 KB] Next pair of indices: (44, 337)
+[t=5.06539s, 1076756 KB] M&S algorithm main loop timer: 4.58293s (after computation of next merge)
+[t=5.22902s, 1076756 KB] M&S algorithm main loop timer: 4.74657s (after shrinking)
+[t=5.349s, 1076756 KB] M&S algorithm main loop timer: 4.86655s (after merging)
+
+[t=5.409s, 1076756 KB] Next pair of indices: (45, 338)
+[t=5.409s, 1076756 KB] M&S algorithm main loop timer: 4.92654s (after computation of next merge)
+[t=5.60101s, 1076756 KB] M&S algorithm main loop timer: 5.11855s (after shrinking)
+[t=5.67701s, 1076756 KB] M&S algorithm main loop timer: 5.19455s (after merging)
+
+[t=5.733s, 1076756 KB] Next pair of indices: (46, 339)
+[t=5.733s, 1076756 KB] M&S algorithm main loop timer: 5.25055s (after computation of next merge)
+[t=5.837s, 1076756 KB] M&S algorithm main loop timer: 5.35455s (after shrinking)
+[t=5.841s, 1076756 KB] M&S algorithm main loop timer: 5.35855s (after merging)
+
+[t=5.893s, 1076756 KB] Next pair of indices: (47, 340)
+[t=5.893s, 1076756 KB] M&S algorithm main loop timer: 5.41055s (after computation of next merge)
+[t=5.893s, 1076756 KB] M&S algorithm main loop timer: 5.41055s (after merging)
+
+[t=5.94898s, 1076756 KB] Next pair of indices: (48, 341)
+[t=5.94898s, 1076756 KB] M&S algorithm main loop timer: 5.46653s (after computation of next merge)
+[t=5.94898s, 1076756 KB] M&S algorithm main loop timer: 5.46653s (after merging)
+
+[t=6.00499s, 1076756 KB] Next pair of indices: (49, 342)
+[t=6.00499s, 1076756 KB] M&S algorithm main loop timer: 5.52253s (after computation of next merge)
+[t=6.00499s, 1076756 KB] M&S algorithm main loop timer: 5.52253s (after merging)
+
+[t=6.05698s, 1076756 KB] Next pair of indices: (50, 343)
+[t=6.05698s, 1076756 KB] M&S algorithm main loop timer: 5.57453s (after computation of next merge)
+[t=6.06098s, 1076756 KB] M&S algorithm main loop timer: 5.57853s (after merging)
+
+[t=6.11297s, 1076756 KB] Next pair of indices: (51, 344)
+[t=6.11297s, 1076756 KB] M&S algorithm main loop timer: 5.63052s (after computation of next merge)
+[t=6.11297s, 1076756 KB] M&S algorithm main loop timer: 5.63052s (after merging)
+
+[t=6.16897s, 1076756 KB] Next pair of indices: (52, 345)
+[t=6.16897s, 1076756 KB] M&S algorithm main loop timer: 5.68652s (after computation of next merge)
+[t=6.16897s, 1076756 KB] M&S algorithm main loop timer: 5.68652s (after merging)
+
+[t=6.22097s, 1076756 KB] Next pair of indices: (53, 346)
+[t=6.22097s, 1076756 KB] M&S algorithm main loop timer: 5.73852s (after computation of next merge)
+[t=6.22497s, 1076756 KB] M&S algorithm main loop timer: 5.74252s (after merging)
+
+[t=6.27696s, 1076756 KB] Next pair of indices: (54, 347)
+[t=6.27696s, 1076756 KB] M&S algorithm main loop timer: 5.79451s (after computation of next merge)
+[t=6.28097s, 1076756 KB] M&S algorithm main loop timer: 5.79851s (after merging)
+
+[t=6.33296s, 1076756 KB] Next pair of indices: (55, 348)
+[t=6.33296s, 1076756 KB] M&S algorithm main loop timer: 5.85051s (after computation of next merge)
+[t=6.33697s, 1076756 KB] M&S algorithm main loop timer: 5.85451s (after merging)
+
+[t=6.38895s, 1076756 KB] Next pair of indices: (56, 349)
+[t=6.38895s, 1076756 KB] M&S algorithm main loop timer: 5.9065s (after computation of next merge)
+[t=6.40096s, 1076756 KB] M&S algorithm main loop timer: 5.9185s (after merging)
+
+[t=6.45295s, 1076756 KB] Next pair of indices: (57, 350)
+[t=6.45295s, 1076756 KB] M&S algorithm main loop timer: 5.9705s (after computation of next merge)
+[t=6.48096s, 1076756 KB] M&S algorithm main loop timer: 5.99851s (after merging)
+
+[t=6.53296s, 1076756 KB] Next pair of indices: (58, 351)
+[t=6.53296s, 1076756 KB] M&S algorithm main loop timer: 6.0505s (after computation of next merge)
+[t=6.59296s, 1076756 KB] M&S algorithm main loop timer: 6.1105s (after merging)
+
+[t=6.64895s, 1076756 KB] Next pair of indices: (59, 352)
+[t=6.64895s, 1076756 KB] M&S algorithm main loop timer: 6.1665s (after computation of next merge)
+[t=6.82094s, 1076756 KB] M&S algorithm main loop timer: 6.33849s (after shrinking)
+[t=6.94893s, 1076756 KB] M&S algorithm main loop timer: 6.46648s (after merging)
+
+[t=7.00492s, 1076756 KB] Next pair of indices: (60, 353)
+[t=7.00492s, 1076756 KB] M&S algorithm main loop timer: 6.52247s (after computation of next merge)
+[t=7.20891s, 1076756 KB] M&S algorithm main loop timer: 6.72646s (after shrinking)
+[t=7.28891s, 1076756 KB] M&S algorithm main loop timer: 6.80646s (after merging)
+
+[t=7.34091s, 1076756 KB] Next pair of indices: (62, 354)
+[t=7.34091s, 1076756 KB] M&S algorithm main loop timer: 6.85845s (after computation of next merge)
+[t=7.46891s, 1076756 KB] M&S algorithm main loop timer: 6.98645s (after shrinking)
+[t=7.46891s, 1076756 KB] M&S algorithm main loop timer: 6.98645s (after merging)
+
+[t=7.51691s, 1076756 KB] Next pair of indices: (63, 355)
+[t=7.51691s, 1076756 KB] M&S algorithm main loop timer: 7.03445s (after computation of next merge)
+[t=7.52091s, 1076756 KB] M&S algorithm main loop timer: 7.03845s (after merging)
+
+[t=7.56891s, 1076756 KB] Next pair of indices: (64, 356)
+[t=7.56891s, 1076756 KB] M&S algorithm main loop timer: 7.08645s (after computation of next merge)
+[t=7.57291s, 1076756 KB] M&S algorithm main loop timer: 7.09046s (after merging)
+
+[t=7.62091s, 1076756 KB] Next pair of indices: (65, 357)
+[t=7.62091s, 1076756 KB] M&S algorithm main loop timer: 7.13845s (after computation of next merge)
+[t=7.62091s, 1076756 KB] M&S algorithm main loop timer: 7.13845s (after merging)
+
+[t=7.66891s, 1076756 KB] Next pair of indices: (66, 358)
+[t=7.66891s, 1076756 KB] M&S algorithm main loop timer: 7.18645s (after computation of next merge)
+[t=7.67291s, 1076756 KB] M&S algorithm main loop timer: 7.19045s (after merging)
+
+[t=7.72091s, 1076756 KB] Next pair of indices: (67, 359)
+[t=7.72091s, 1076756 KB] M&S algorithm main loop timer: 7.23845s (after computation of next merge)
+[t=7.72491s, 1076756 KB] M&S algorithm main loop timer: 7.24246s (after merging)
+
+[t=7.77291s, 1076756 KB] Next pair of indices: (68, 360)
+[t=7.77291s, 1076756 KB] M&S algorithm main loop timer: 7.29045s (after computation of next merge)
+[t=7.77291s, 1076756 KB] M&S algorithm main loop timer: 7.29045s (after merging)
+
+[t=7.82091s, 1076756 KB] Next pair of indices: (69, 361)
+[t=7.82091s, 1076756 KB] M&S algorithm main loop timer: 7.33845s (after computation of next merge)
+[t=7.82491s, 1076756 KB] M&S algorithm main loop timer: 7.34246s (after merging)
+
+[t=7.87291s, 1076756 KB] Next pair of indices: (70, 362)
+[t=7.87291s, 1076756 KB] M&S algorithm main loop timer: 7.39045s (after computation of next merge)
+[t=7.87691s, 1076756 KB] M&S algorithm main loop timer: 7.39446s (after merging)
+
+[t=7.92091s, 1076756 KB] Next pair of indices: (71, 363)
+[t=7.92091s, 1076756 KB] M&S algorithm main loop timer: 7.43845s (after computation of next merge)
+[t=7.9289s, 1076756 KB] M&S algorithm main loop timer: 7.44645s (after merging)
+
+[t=7.97688s, 1076756 KB] Next pair of indices: (72, 364)
+[t=7.97688s, 1076756 KB] M&S algorithm main loop timer: 7.49443s (after computation of next merge)
+[t=7.98489s, 1076756 KB] M&S algorithm main loop timer: 7.50243s (after merging)
+
+[t=8.03288s, 1076756 KB] Next pair of indices: (73, 365)
+[t=8.03288s, 1076756 KB] M&S algorithm main loop timer: 7.55042s (after computation of next merge)
+[t=8.05288s, 1076756 KB] M&S algorithm main loop timer: 7.57043s (after merging)
+
+[t=8.10087s, 1076756 KB] Next pair of indices: (74, 366)
+[t=8.10087s, 1076756 KB] M&S algorithm main loop timer: 7.61842s (after computation of next merge)
+[t=8.14088s, 1076756 KB] M&S algorithm main loop timer: 7.65842s (after merging)
+
+[t=8.18886s, 1076756 KB] Next pair of indices: (75, 367)
+[t=8.18886s, 1076756 KB] M&S algorithm main loop timer: 7.70641s (after computation of next merge)
+[t=8.30887s, 1076756 KB] M&S algorithm main loop timer: 7.82642s (after shrinking)
+[t=8.36486s, 1076756 KB] M&S algorithm main loop timer: 7.8824s (after merging)
+
+[t=8.41285s, 1076756 KB] Next pair of indices: (76, 368)
+[t=8.41285s, 1076756 KB] M&S algorithm main loop timer: 7.9304s (after computation of next merge)
+[t=8.54486s, 1076756 KB] M&S algorithm main loop timer: 8.06241s (after shrinking)
+[t=8.61285s, 1076756 KB] M&S algorithm main loop timer: 8.1304s (after merging)
+
+[t=8.66084s, 1076756 KB] Next pair of indices: (77, 369)
+[t=8.66084s, 1076756 KB] M&S algorithm main loop timer: 8.17839s (after computation of next merge)
+[t=8.77285s, 1076756 KB] M&S algorithm main loop timer: 8.29039s (after shrinking)
+[t=8.78885s, 1076756 KB] M&S algorithm main loop timer: 8.30639s (after merging)
+
+[t=8.83284s, 1076756 KB] Next pair of indices: (78, 370)
+[t=8.83284s, 1076756 KB] M&S algorithm main loop timer: 8.35039s (after computation of next merge)
+[t=8.87685s, 1076756 KB] M&S algorithm main loop timer: 8.3944s (after merging)
+
+[t=8.92084s, 1076756 KB] Next pair of indices: (79, 371)
+[t=8.92084s, 1076756 KB] M&S algorithm main loop timer: 8.43839s (after computation of next merge)
+[t=9.03284s, 1076756 KB] M&S algorithm main loop timer: 8.55039s (after merging)
+
+[t=9.08083s, 1076756 KB] Next pair of indices: (80, 372)
+[t=9.08083s, 1076756 KB] M&S algorithm main loop timer: 8.59838s (after computation of next merge)
+[t=9.22883s, 1076756 KB] M&S algorithm main loop timer: 8.74638s (after shrinking)
+[t=9.23284s, 1076756 KB] M&S algorithm main loop timer: 8.75038s (after merging)
+
+[t=9.27683s, 1076756 KB] Next pair of indices: (81, 373)
+[t=9.27683s, 1076756 KB] M&S algorithm main loop timer: 8.79438s (after computation of next merge)
+[t=9.27683s, 1076756 KB] M&S algorithm main loop timer: 8.79438s (after merging)
+
+[t=9.32083s, 1076756 KB] Next pair of indices: (82, 374)
+[t=9.32083s, 1076756 KB] M&S algorithm main loop timer: 8.83838s (after computation of next merge)
+[t=9.32483s, 1076756 KB] M&S algorithm main loop timer: 8.84238s (after merging)
+
+[t=9.36483s, 1076756 KB] Next pair of indices: (83, 375)
+[t=9.36483s, 1076756 KB] M&S algorithm main loop timer: 8.88238s (after computation of next merge)
+[t=9.36883s, 1076756 KB] M&S algorithm main loop timer: 8.88638s (after merging)
+
+[t=9.41283s, 1076756 KB] Next pair of indices: (84, 376)
+[t=9.41283s, 1076756 KB] M&S algorithm main loop timer: 8.93038s (after computation of next merge)
+[t=9.41283s, 1076756 KB] M&S algorithm main loop timer: 8.93038s (after merging)
+
+[t=9.45683s, 1076756 KB] Next pair of indices: (85, 377)
+[t=9.45683s, 1076756 KB] M&S algorithm main loop timer: 8.97438s (after computation of next merge)
+[t=9.45683s, 1076756 KB] M&S algorithm main loop timer: 8.97438s (after merging)
+[t=9.45683s, 1076756 KB] M&S algorithm main loop timer: 8.97838s (after pruning)
+
+[t=9.50083s, 1076756 KB] Next pair of indices: (86, 378)
+[t=9.50083s, 1076756 KB] M&S algorithm main loop timer: 9.01838s (after computation of next merge)
+[t=9.50483s, 1076756 KB] M&S algorithm main loop timer: 9.02238s (after merging)
+
+[t=9.54483s, 1076756 KB] Next pair of indices: (87, 379)
+[t=9.54483s, 1076756 KB] M&S algorithm main loop timer: 9.06238s (after computation of next merge)
+[t=9.54883s, 1076756 KB] M&S algorithm main loop timer: 9.06638s (after merging)
+[t=9.54883s, 1076756 KB] M&S algorithm main loop timer: 9.06638s (after pruning)
+
+[t=9.59283s, 1076756 KB] Next pair of indices: (88, 380)
+[t=9.59283s, 1076756 KB] M&S algorithm main loop timer: 9.11038s (after computation of next merge)
+[t=9.59683s, 1076756 KB] M&S algorithm main loop timer: 9.11438s (after merging)
+
+[t=9.63683s, 1076756 KB] Next pair of indices: (89, 381)
+[t=9.63683s, 1076756 KB] M&S algorithm main loop timer: 9.15438s (after computation of next merge)
+[t=9.64483s, 1076756 KB] M&S algorithm main loop timer: 9.16238s (after merging)
+
+[t=9.68483s, 1076756 KB] Next pair of indices: (90, 382)
+[t=9.68483s, 1076756 KB] M&S algorithm main loop timer: 9.20238s (after computation of next merge)
+[t=9.70083s, 1076756 KB] M&S algorithm main loop timer: 9.21838s (after merging)
+
+[t=9.74083s, 1076756 KB] Next pair of indices: (91, 383)
+[t=9.74083s, 1076756 KB] M&S algorithm main loop timer: 9.25838s (after computation of next merge)
+[t=9.77684s, 1076756 KB] M&S algorithm main loop timer: 9.29438s (after merging)
+
+[t=9.81682s, 1076756 KB] Next pair of indices: (92, 384)
+[t=9.81682s, 1076756 KB] M&S algorithm main loop timer: 9.33437s (after computation of next merge)
+[t=9.89283s, 1076756 KB] M&S algorithm main loop timer: 9.41038s (after merging)
+
+[t=9.93282s, 1076756 KB] Next pair of indices: (93, 385)
+[t=9.93282s, 1076756 KB] M&S algorithm main loop timer: 9.45037s (after computation of next merge)
+[t=10.0928s, 1076756 KB] M&S algorithm main loop timer: 9.61035s (after merging)
+
+[t=10.1368s, 1076756 KB] Next pair of indices: (94, 386)
+[t=10.1368s, 1076756 KB] M&S algorithm main loop timer: 9.65434s (after computation of next merge)
+[t=10.6088s, 1076756 KB] M&S algorithm main loop timer: 10.1263s (after shrinking)
+[t=10.9528s, 1076756 KB] M&S algorithm main loop timer: 10.4703s (after merging)
+
+[t=11.0007s, 1076756 KB] Next pair of indices: (95, 387)
+[t=11.0007s, 1076756 KB] M&S algorithm main loop timer: 10.5183s (after computation of next merge)
+[t=11.5407s, 1076756 KB] M&S algorithm main loop timer: 11.0623s (after shrinking)
+[t=11.7407s, 1076756 KB] M&S algorithm main loop timer: 11.2583s (after merging)
+
+[t=11.7847s, 1076756 KB] Next pair of indices: (96, 388)
+[t=11.7847s, 1076756 KB] M&S algorithm main loop timer: 11.3063s (after computation of next merge)
+[t=12.0447s, 1076756 KB] M&S algorithm main loop timer: 11.5622s (after shrinking)
+[t=12.0487s, 1076756 KB] M&S algorithm main loop timer: 11.5662s (after merging)
+
+[t=12.0847s, 1076756 KB] Next pair of indices: (97, 389)
+[t=12.0887s, 1076756 KB] M&S algorithm main loop timer: 11.6062s (after computation of next merge)
+[t=12.0887s, 1076756 KB] M&S algorithm main loop timer: 11.6062s (after merging)
+
+[t=12.1287s, 1076756 KB] Next pair of indices: (98, 390)
+[t=12.1287s, 1076756 KB] M&S algorithm main loop timer: 11.6462s (after computation of next merge)
+[t=12.1287s, 1076756 KB] M&S algorithm main loop timer: 11.6462s (after merging)
+
+[t=12.1687s, 1076756 KB] Next pair of indices: (99, 391)
+[t=12.1687s, 1076756 KB] M&S algorithm main loop timer: 11.6862s (after computation of next merge)
+[t=12.1727s, 1076756 KB] M&S algorithm main loop timer: 11.6902s (after merging)
+
+[t=12.2087s, 1076756 KB] Next pair of indices: (100, 392)
+[t=12.2087s, 1076756 KB] M&S algorithm main loop timer: 11.7262s (after computation of next merge)
+[t=12.2127s, 1076756 KB] M&S algorithm main loop timer: 11.7302s (after merging)
+
+[t=12.2487s, 1076756 KB] Next pair of indices: (101, 393)
+[t=12.2487s, 1076756 KB] M&S algorithm main loop timer: 11.7662s (after computation of next merge)
+[t=12.2527s, 1076756 KB] M&S algorithm main loop timer: 11.7702s (after merging)
+
+[t=12.2927s, 1076756 KB] Next pair of indices: (102, 394)
+[t=12.2927s, 1076756 KB] M&S algorithm main loop timer: 11.8102s (after computation of next merge)
+[t=12.2967s, 1076756 KB] M&S algorithm main loop timer: 11.8142s (after merging)
+
+[t=12.3327s, 1076756 KB] Next pair of indices: (103, 395)
+[t=12.3327s, 1076756 KB] M&S algorithm main loop timer: 11.8502s (after computation of next merge)
+[t=12.3407s, 1076756 KB] M&S algorithm main loop timer: 11.8582s (after merging)
+
+[t=12.3767s, 1076756 KB] Next pair of indices: (104, 396)
+[t=12.3767s, 1076756 KB] M&S algorithm main loop timer: 11.8942s (after computation of next merge)
+[t=12.3887s, 1076756 KB] M&S algorithm main loop timer: 11.9062s (after merging)
+
+[t=12.4247s, 1076756 KB] Next pair of indices: (105, 397)
+[t=12.4247s, 1076756 KB] M&S algorithm main loop timer: 11.9422s (after computation of next merge)
+[t=12.4487s, 1076756 KB] M&S algorithm main loop timer: 11.9662s (after merging)
+
+[t=12.4847s, 1076756 KB] Next pair of indices: (106, 398)
+[t=12.4847s, 1076756 KB] M&S algorithm main loop timer: 12.0022s (after computation of next merge)
+[t=12.5447s, 1076756 KB] M&S algorithm main loop timer: 12.0622s (after merging)
+
+[t=12.5807s, 1076756 KB] Next pair of indices: (107, 399)
+[t=12.5807s, 1076756 KB] M&S algorithm main loop timer: 12.0982s (after computation of next merge)
+[t=12.7047s, 1076756 KB] M&S algorithm main loop timer: 12.2222s (after merging)
+
+[t=12.7447s, 1076756 KB] Next pair of indices: (108, 400)
+[t=12.7447s, 1076756 KB] M&S algorithm main loop timer: 12.2622s (after computation of next merge)
+[t=13.0446s, 1076756 KB] M&S algorithm main loop timer: 12.5622s (after merging)
+
+[t=13.0926s, 1076756 KB] Next pair of indices: (109, 401)
+[t=13.0926s, 1076756 KB] M&S algorithm main loop timer: 12.6102s (after computation of next merge)
+[t=13.6806s, 1076756 KB] M&S algorithm main loop timer: 13.1982s (after shrinking)
+[t=14.0286s, 1076756 KB] M&S algorithm main loop timer: 13.5462s (after merging)
+
+[t=14.0726s, 1076756 KB] Next pair of indices: (110, 402)
+[t=14.0726s, 1076756 KB] M&S algorithm main loop timer: 13.5901s (after computation of next merge)
+[t=14.6446s, 1076756 KB] M&S algorithm main loop timer: 14.1621s (after shrinking)
+[t=14.8846s, 1076756 KB] M&S algorithm main loop timer: 14.4061s (after merging)
+
+[t=14.9286s, 1076756 KB] Next pair of indices: (111, 403)
+[t=14.9286s, 1076756 KB] M&S algorithm main loop timer: 14.4461s (after computation of next merge)
+[t=15.2485s, 1076756 KB] M&S algorithm main loop timer: 14.7701s (after shrinking)
+[t=15.2525s, 1076756 KB] M&S algorithm main loop timer: 14.7701s (after merging)
+
+[t=15.2885s, 1076756 KB] Next pair of indices: (112, 404)
+[t=15.2885s, 1076756 KB] M&S algorithm main loop timer: 14.8061s (after computation of next merge)
+[t=15.2885s, 1076756 KB] M&S algorithm main loop timer: 14.8061s (after merging)
+
+[t=15.3245s, 1076756 KB] Next pair of indices: (113, 405)
+[t=15.3245s, 1076756 KB] M&S algorithm main loop timer: 14.8421s (after computation of next merge)
+[t=15.3285s, 1076756 KB] M&S algorithm main loop timer: 14.8461s (after merging)
+
+[t=15.3605s, 1076756 KB] Next pair of indices: (114, 406)
+[t=15.3605s, 1076756 KB] M&S algorithm main loop timer: 14.8781s (after computation of next merge)
+[t=15.3645s, 1076756 KB] M&S algorithm main loop timer: 14.8821s (after merging)
+
+[t=15.4005s, 1076756 KB] Next pair of indices: (115, 407)
+[t=15.4005s, 1076756 KB] M&S algorithm main loop timer: 14.9181s (after computation of next merge)
+[t=15.4005s, 1076756 KB] M&S algorithm main loop timer: 14.9181s (after merging)
+
+[t=15.4365s, 1076756 KB] Next pair of indices: (116, 408)
+[t=15.4365s, 1076756 KB] M&S algorithm main loop timer: 14.9541s (after computation of next merge)
+[t=15.4405s, 1076756 KB] M&S algorithm main loop timer: 14.9581s (after merging)
+
+[t=15.4725s, 1076756 KB] Next pair of indices: (117, 409)
+[t=15.4725s, 1076756 KB] M&S algorithm main loop timer: 14.9901s (after computation of next merge)
+[t=15.4765s, 1076756 KB] M&S algorithm main loop timer: 14.9941s (after merging)
+
+[t=15.5125s, 1076756 KB] Next pair of indices: (118, 410)
+[t=15.5125s, 1076756 KB] M&S algorithm main loop timer: 15.0301s (after computation of next merge)
+[t=15.5165s, 1076756 KB] M&S algorithm main loop timer: 15.0381s (after merging)
+
+[t=15.5525s, 1076756 KB] Next pair of indices: (119, 411)
+[t=15.5525s, 1076756 KB] M&S algorithm main loop timer: 15.0701s (after computation of next merge)
+[t=15.5645s, 1076756 KB] M&S algorithm main loop timer: 15.0821s (after merging)
+
+[t=15.6005s, 1076756 KB] Next pair of indices: (120, 412)
+[t=15.6005s, 1076756 KB] M&S algorithm main loop timer: 15.1181s (after computation of next merge)
+[t=15.6325s, 1076756 KB] M&S algorithm main loop timer: 15.1501s (after merging)
+
+[t=15.6685s, 1076756 KB] Next pair of indices: (121, 413)
+[t=15.6685s, 1076756 KB] M&S algorithm main loop timer: 15.1861s (after computation of next merge)
+[t=15.7405s, 1076756 KB] M&S algorithm main loop timer: 15.2581s (after merging)
+
+[t=15.7765s, 1076756 KB] Next pair of indices: (122, 414)
+[t=15.7765s, 1076756 KB] M&S algorithm main loop timer: 15.2941s (after computation of next merge)
+[t=15.9445s, 1076756 KB] M&S algorithm main loop timer: 15.466s (after merging)
+
+[t=15.9845s, 1076756 KB] Next pair of indices: (123, 415)
+[t=15.9845s, 1076756 KB] M&S algorithm main loop timer: 15.502s (after computation of next merge)
+[t=16.4045s, 1076756 KB] M&S algorithm main loop timer: 15.922s (after merging)
+
+[t=16.4445s, 1076756 KB] Next pair of indices: (124, 416)
+[t=16.4445s, 1076756 KB] M&S algorithm main loop timer: 15.962s (after computation of next merge)
+[t=17.2244s, 1076756 KB] M&S algorithm main loop timer: 16.742s (after shrinking)
+[t=17.6764s, 1076756 KB] M&S algorithm main loop timer: 17.194s (after merging)
+
+[t=17.7204s, 1076756 KB] Next pair of indices: (125, 417)
+[t=17.7204s, 1076756 KB] M&S algorithm main loop timer: 17.238s (after computation of next merge)
+[t=18.4324s, 1076756 KB] M&S algorithm main loop timer: 17.9499s (after shrinking)
+[t=18.7724s, 1076756 KB] M&S algorithm main loop timer: 18.2899s (after merging)
+
+[t=18.8124s, 1076756 KB] Next pair of indices: (126, 418)
+[t=18.8124s, 1076756 KB] M&S algorithm main loop timer: 18.3299s (after computation of next merge)
+[t=19.2484s, 1076756 KB] M&S algorithm main loop timer: 18.7699s (after shrinking)
+[t=19.2524s, 1076756 KB] M&S algorithm main loop timer: 18.7699s (after merging)
+
+[t=19.2844s, 1076756 KB] Next pair of indices: (127, 419)
+[t=19.2844s, 1076756 KB] M&S algorithm main loop timer: 18.8019s (after computation of next merge)
+[t=19.2884s, 1076756 KB] M&S algorithm main loop timer: 18.8059s (after merging)
+
+[t=19.3204s, 1076756 KB] Next pair of indices: (128, 420)
+[t=19.3204s, 1076756 KB] M&S algorithm main loop timer: 18.8379s (after computation of next merge)
+[t=19.3204s, 1076756 KB] M&S algorithm main loop timer: 18.8379s (after merging)
+
+[t=19.3524s, 1076756 KB] Next pair of indices: (129, 421)
+[t=19.3524s, 1076756 KB] M&S algorithm main loop timer: 18.8699s (after computation of next merge)
+[t=19.3564s, 1076756 KB] M&S algorithm main loop timer: 18.8739s (after merging)
+
+[t=19.3844s, 1076756 KB] Next pair of indices: (130, 422)
+[t=19.3844s, 1076756 KB] M&S algorithm main loop timer: 18.9019s (after computation of next merge)
+[t=19.3884s, 1076756 KB] M&S algorithm main loop timer: 18.9059s (after merging)
+
+[t=19.4204s, 1076756 KB] Next pair of indices: (131, 423)
+[t=19.4204s, 1076756 KB] M&S algorithm main loop timer: 18.9379s (after computation of next merge)
+[t=19.4204s, 1076756 KB] M&S algorithm main loop timer: 18.9379s (after merging)
+
+[t=19.4524s, 1076756 KB] Next pair of indices: (132, 424)
+[t=19.4524s, 1076756 KB] M&S algorithm main loop timer: 18.9699s (after computation of next merge)
+[t=19.4564s, 1076756 KB] M&S algorithm main loop timer: 18.9739s (after merging)
+
+[t=19.4884s, 1076756 KB] Next pair of indices: (133, 425)
+[t=19.4884s, 1076756 KB] M&S algorithm main loop timer: 19.0059s (after computation of next merge)
+[t=19.4924s, 1076756 KB] M&S algorithm main loop timer: 19.0099s (after merging)
+
+[t=19.5244s, 1076756 KB] Next pair of indices: (134, 426)
+[t=19.5244s, 1076756 KB] M&S algorithm main loop timer: 19.0419s (after computation of next merge)
+[t=19.5364s, 1076756 KB] M&S algorithm main loop timer: 19.0539s (after merging)
+
+[t=19.5684s, 1076756 KB] Next pair of indices: (135, 427)
+[t=19.5684s, 1076756 KB] M&S algorithm main loop timer: 19.0859s (after computation of next merge)
+[t=19.6004s, 1076756 KB] M&S algorithm main loop timer: 19.1179s (after merging)
+
+[t=19.6284s, 1076756 KB] Next pair of indices: (136, 428)
+[t=19.6284s, 1076756 KB] M&S algorithm main loop timer: 19.1459s (after computation of next merge)
+[t=19.7044s, 1076756 KB] M&S algorithm main loop timer: 19.2219s (after merging)
+
+[t=19.7364s, 1076756 KB] Next pair of indices: (137, 429)
+[t=19.7364s, 1076756 KB] M&S algorithm main loop timer: 19.2539s (after computation of next merge)
+[t=19.9164s, 1076756 KB] M&S algorithm main loop timer: 19.4339s (after merging)
+
+[t=19.9524s, 1076756 KB] Next pair of indices: (138, 430)
+[t=19.9524s, 1076756 KB] M&S algorithm main loop timer: 19.4699s (after computation of next merge)
+[t=20.4003s, 1076756 KB] M&S algorithm main loop timer: 19.9179s (after merging)
+
+[t=20.4403s, 1076756 KB] Next pair of indices: (139, 431)
+[t=20.4403s, 1076756 KB] M&S algorithm main loop timer: 19.9579s (after computation of next merge)
+[t=21.2883s, 1076756 KB] M&S algorithm main loop timer: 20.8059s (after shrinking)
+[t=21.7923s, 1076756 KB] M&S algorithm main loop timer: 21.3099s (after merging)
+
+[t=21.8323s, 1076756 KB] Next pair of indices: (140, 432)
+[t=21.8323s, 1076756 KB] M&S algorithm main loop timer: 21.3499s (after computation of next merge)
+[t=22.6602s, 1076756 KB] M&S algorithm main loop timer: 22.1778s (after shrinking)
+[t=23.0162s, 1076756 KB] M&S algorithm main loop timer: 22.5338s (after merging)
+
+[t=23.0522s, 1076756 KB] Next pair of indices: (141, 433)
+[t=23.0522s, 1076756 KB] M&S algorithm main loop timer: 22.5738s (after computation of next merge)
+[t=23.5242s, 1076756 KB] M&S algorithm main loop timer: 23.0417s (after shrinking)
+[t=23.5282s, 1076756 KB] M&S algorithm main loop timer: 23.0457s (after merging)
+
+[t=23.5562s, 1076756 KB] Next pair of indices: (142, 434)
+[t=23.5562s, 1076756 KB] M&S algorithm main loop timer: 23.0737s (after computation of next merge)
+[t=23.5562s, 1076756 KB] M&S algorithm main loop timer: 23.0737s (after merging)
+
+[t=23.5842s, 1076756 KB] Next pair of indices: (143, 435)
+[t=23.5842s, 1076756 KB] M&S algorithm main loop timer: 23.1017s (after computation of next merge)
+[t=23.5882s, 1076756 KB] M&S algorithm main loop timer: 23.1057s (after merging)
+
+[t=23.6162s, 1076756 KB] Next pair of indices: (144, 436)
+[t=23.6162s, 1076756 KB] M&S algorithm main loop timer: 23.1337s (after computation of next merge)
+[t=23.6162s, 1076756 KB] M&S algorithm main loop timer: 23.1337s (after merging)
+
+[t=23.6442s, 1076756 KB] Next pair of indices: (145, 437)
+[t=23.6442s, 1076756 KB] M&S algorithm main loop timer: 23.1617s (after computation of next merge)
+[t=23.6482s, 1076756 KB] M&S algorithm main loop timer: 23.1657s (after merging)
+
+[t=23.6722s, 1076756 KB] Next pair of indices: (146, 438)
+[t=23.6722s, 1076756 KB] M&S algorithm main loop timer: 23.1897s (after computation of next merge)
+[t=23.6762s, 1076756 KB] M&S algorithm main loop timer: 23.1937s (after merging)
+
+[t=23.7042s, 1076756 KB] Next pair of indices: (147, 439)
+[t=23.7042s, 1076756 KB] M&S algorithm main loop timer: 23.2217s (after computation of next merge)
+[t=23.7082s, 1076756 KB] M&S algorithm main loop timer: 23.2257s (after merging)
+
+[t=23.7362s, 1076756 KB] Next pair of indices: (148, 440)
+[t=23.7362s, 1076756 KB] M&S algorithm main loop timer: 23.2537s (after computation of next merge)
+[t=23.7402s, 1076756 KB] M&S algorithm main loop timer: 23.2577s (after merging)
+
+[t=23.7682s, 1076756 KB] Next pair of indices: (149, 441)
+[t=23.7682s, 1076756 KB] M&S algorithm main loop timer: 23.2857s (after computation of next merge)
+[t=23.7802s, 1076756 KB] M&S algorithm main loop timer: 23.2977s (after merging)
+
+[t=23.8082s, 1076756 KB] Next pair of indices: (150, 442)
+[t=23.8082s, 1076756 KB] M&S algorithm main loop timer: 23.3257s (after computation of next merge)
+[t=23.8402s, 1076756 KB] M&S algorithm main loop timer: 23.3577s (after merging)
+
+[t=23.8682s, 1076756 KB] Next pair of indices: (151, 443)
+[t=23.8682s, 1076756 KB] M&S algorithm main loop timer: 23.3857s (after computation of next merge)
+[t=23.9442s, 1076756 KB] M&S algorithm main loop timer: 23.4617s (after merging)
+
+[t=23.9722s, 1076756 KB] Next pair of indices: (152, 444)
+[t=23.9722s, 1076756 KB] M&S algorithm main loop timer: 23.4897s (after computation of next merge)
+[t=24.1602s, 1076756 KB] M&S algorithm main loop timer: 23.6777s (after merging)
+
+[t=24.1881s, 1076756 KB] Next pair of indices: (153, 445)
+[t=24.1881s, 1076756 KB] M&S algorithm main loop timer: 23.7057s (after computation of next merge)
+[t=24.6681s, 1076756 KB] M&S algorithm main loop timer: 24.1857s (after merging)
+
+[t=24.7041s, 1076756 KB] Next pair of indices: (154, 446)
+[t=24.7041s, 1076756 KB] M&S algorithm main loop timer: 24.2217s (after computation of next merge)
+[t=25.6039s, 1076756 KB] M&S algorithm main loop timer: 25.1214s (after shrinking)
+[t=26.1638s, 1076756 KB] M&S algorithm main loop timer: 25.6814s (after merging)
+
+[t=26.2038s, 1076756 KB] Next pair of indices: (155, 447)
+[t=26.2038s, 1076756 KB] M&S algorithm main loop timer: 25.7214s (after computation of next merge)
+[t=27.0838s, 1076756 KB] M&S algorithm main loop timer: 26.6013s (after shrinking)
+[t=27.4958s, 1076756 KB] M&S algorithm main loop timer: 27.0133s (after merging)
+
+[t=27.5318s, 1076756 KB] Next pair of indices: (156, 448)
+[t=27.5318s, 1076756 KB] M&S algorithm main loop timer: 27.0493s (after computation of next merge)
+[t=28.0558s, 1076756 KB] M&S algorithm main loop timer: 27.5733s (after shrinking)
+[t=28.0598s, 1076756 KB] M&S algorithm main loop timer: 27.5773s (after merging)
+
+[t=28.0838s, 1076756 KB] Next pair of indices: (157, 449)
+[t=28.0838s, 1076756 KB] M&S algorithm main loop timer: 27.6013s (after computation of next merge)
+[t=28.0838s, 1076756 KB] M&S algorithm main loop timer: 27.6013s (after merging)
+
+[t=28.1078s, 1076756 KB] Next pair of indices: (158, 450)
+[t=28.1118s, 1076756 KB] M&S algorithm main loop timer: 27.6293s (after computation of next merge)
+[t=28.1118s, 1076756 KB] M&S algorithm main loop timer: 27.6293s (after merging)
+
+[t=28.1358s, 1076756 KB] Next pair of indices: (159, 451)
+[t=28.1358s, 1076756 KB] M&S algorithm main loop timer: 27.6533s (after computation of next merge)
+[t=28.1398s, 1076756 KB] M&S algorithm main loop timer: 27.6573s (after merging)
+
+[t=28.1637s, 1076756 KB] Next pair of indices: (160, 452)
+[t=28.1637s, 1076756 KB] M&S algorithm main loop timer: 27.6813s (after computation of next merge)
+[t=28.1637s, 1076756 KB] M&S algorithm main loop timer: 27.6813s (after merging)
+
+[t=28.1877s, 1076756 KB] Next pair of indices: (161, 453)
+[t=28.1877s, 1076756 KB] M&S algorithm main loop timer: 27.7053s (after computation of next merge)
+[t=28.1917s, 1076756 KB] M&S algorithm main loop timer: 27.7093s (after merging)
+
+[t=28.2157s, 1076756 KB] Next pair of indices: (162, 454)
+[t=28.2157s, 1076756 KB] M&S algorithm main loop timer: 27.7333s (after computation of next merge)
+[t=28.2198s, 1076756 KB] M&S algorithm main loop timer: 27.7373s (after merging)
+
+[t=28.2437s, 1076756 KB] Next pair of indices: (163, 455)
+[t=28.2437s, 1076756 KB] M&S algorithm main loop timer: 27.7613s (after computation of next merge)
+[t=28.2518s, 1076756 KB] M&S algorithm main loop timer: 27.7693s (after merging)
+
+[t=28.2717s, 1076756 KB] Next pair of indices: (164, 456)
+[t=28.2717s, 1076756 KB] M&S algorithm main loop timer: 27.7893s (after computation of next merge)
+[t=28.2918s, 1076756 KB] M&S algorithm main loop timer: 27.8093s (after merging)
+
+[t=28.3117s, 1076756 KB] Next pair of indices: (165, 457)
+[t=28.3117s, 1076756 KB] M&S algorithm main loop timer: 27.8293s (after computation of next merge)
+[t=28.3558s, 1076756 KB] M&S algorithm main loop timer: 27.8733s (after merging)
+
+[t=28.3797s, 1076756 KB] Next pair of indices: (166, 458)
+[t=28.3797s, 1076756 KB] M&S algorithm main loop timer: 27.8973s (after computation of next merge)
+[t=28.4837s, 1076756 KB] M&S algorithm main loop timer: 28.0013s (after merging)
+
+[t=28.5117s, 1076756 KB] Next pair of indices: (167, 459)
+[t=28.5117s, 1076756 KB] M&S algorithm main loop timer: 28.0293s (after computation of next merge)
+[t=28.7677s, 1076756 KB] M&S algorithm main loop timer: 28.2853s (after merging)
+
+[t=28.7957s, 1076756 KB] Next pair of indices: (168, 460)
+[t=28.7957s, 1076756 KB] M&S algorithm main loop timer: 28.3133s (after computation of next merge)
+[t=29.4797s, 1076756 KB] M&S algorithm main loop timer: 28.9973s (after merging)
+
+[t=29.5157s, 1076756 KB] Next pair of indices: (169, 461)
+[t=29.5157s, 1076756 KB] M&S algorithm main loop timer: 29.0333s (after computation of next merge)
+[t=30.8037s, 1076756 KB] M&S algorithm main loop timer: 30.3212s (after shrinking)
+[t=31.5597s, 1076756 KB] M&S algorithm main loop timer: 31.0772s (after merging)
+
+[t=31.5957s, 1076756 KB] Next pair of indices: (170, 462)
+[t=31.5957s, 1076756 KB] M&S algorithm main loop timer: 31.1132s (after computation of next merge)
+[t=32.8076s, 1076756 KB] M&S algorithm main loop timer: 32.3252s (after shrinking)
+[t=33.3476s, 1076756 KB] M&S algorithm main loop timer: 32.8651s (after merging)
+
+[t=33.3836s, 1076756 KB] Next pair of indices: (171, 463)
+[t=33.3836s, 1076756 KB] M&S algorithm main loop timer: 32.9011s (after computation of next merge)
+[t=34.0955s, 1076756 KB] M&S algorithm main loop timer: 33.6171s (after shrinking)
+[t=34.1035s, 1076756 KB] M&S algorithm main loop timer: 33.6211s (after merging)
+
+[t=34.1235s, 1076756 KB] Next pair of indices: (172, 464)
+[t=34.1235s, 1076756 KB] M&S algorithm main loop timer: 33.6411s (after computation of next merge)
+[t=34.1275s, 1076756 KB] M&S algorithm main loop timer: 33.6451s (after merging)
+
+[t=34.1475s, 1076756 KB] Next pair of indices: (173, 465)
+[t=34.1475s, 1076756 KB] M&S algorithm main loop timer: 33.6651s (after computation of next merge)
+[t=34.1475s, 1076756 KB] M&S algorithm main loop timer: 33.6651s (after merging)
+
+[t=34.1715s, 1076756 KB] Next pair of indices: (174, 466)
+[t=34.1715s, 1076756 KB] M&S algorithm main loop timer: 33.6891s (after computation of next merge)
+[t=34.1715s, 1076756 KB] M&S algorithm main loop timer: 33.6891s (after merging)
+
+[t=34.1915s, 1076756 KB] Next pair of indices: (175, 467)
+[t=34.1915s, 1076756 KB] M&S algorithm main loop timer: 33.7091s (after computation of next merge)
+[t=34.1955s, 1076756 KB] M&S algorithm main loop timer: 33.7131s (after merging)
+
+[t=34.2155s, 1076756 KB] Next pair of indices: (176, 468)
+[t=34.2155s, 1076756 KB] M&S algorithm main loop timer: 33.7331s (after computation of next merge)
+[t=34.2195s, 1076756 KB] M&S algorithm main loop timer: 33.7371s (after merging)
+
+[t=34.2395s, 1076756 KB] Next pair of indices: (177, 469)
+[t=34.2395s, 1076756 KB] M&S algorithm main loop timer: 33.7571s (after computation of next merge)
+[t=34.2435s, 1076756 KB] M&S algorithm main loop timer: 33.7611s (after merging)
+
+[t=34.2635s, 1076756 KB] Next pair of indices: (178, 470)
+[t=34.2635s, 1076756 KB] M&S algorithm main loop timer: 33.7811s (after computation of next merge)
+[t=34.2715s, 1076756 KB] M&S algorithm main loop timer: 33.7891s (after merging)
+
+[t=34.2915s, 1076756 KB] Next pair of indices: (179, 471)
+[t=34.2915s, 1076756 KB] M&S algorithm main loop timer: 33.8091s (after computation of next merge)
+[t=34.3075s, 1076756 KB] M&S algorithm main loop timer: 33.8251s (after merging)
+
+[t=34.3275s, 1076756 KB] Next pair of indices: (180, 472)
+[t=34.3275s, 1076756 KB] M&S algorithm main loop timer: 33.8451s (after computation of next merge)
+[t=34.3635s, 1076756 KB] M&S algorithm main loop timer: 33.8811s (after merging)
+
+[t=34.3835s, 1076756 KB] Next pair of indices: (181, 473)
+[t=34.3835s, 1076756 KB] M&S algorithm main loop timer: 33.9011s (after computation of next merge)
+[t=34.4835s, 1076756 KB] M&S algorithm main loop timer: 34.0011s (after merging)
+
+[t=34.5035s, 1076756 KB] Next pair of indices: (182, 474)
+[t=34.5035s, 1076756 KB] M&S algorithm main loop timer: 34.0211s (after computation of next merge)
+[t=34.7515s, 1076756 KB] M&S algorithm main loop timer: 34.2691s (after merging)
+
+[t=34.7795s, 1076756 KB] Next pair of indices: (183, 475)
+[t=34.7795s, 1076756 KB] M&S algorithm main loop timer: 34.2971s (after computation of next merge)
+[t=35.4075s, 1076756 KB] M&S algorithm main loop timer: 34.925s (after merging)
+
+[t=35.4395s, 1076756 KB] Next pair of indices: (184, 476)
+[t=35.4395s, 1076756 KB] M&S algorithm main loop timer: 34.957s (after computation of next merge)
+[t=36.6595s, 1076756 KB] M&S algorithm main loop timer: 36.177s (after shrinking)
+[t=37.3594s, 1076756 KB] M&S algorithm main loop timer: 36.877s (after merging)
+
+[t=37.3954s, 1076756 KB] Next pair of indices: (185, 477)
+[t=37.3954s, 1076756 KB] M&S algorithm main loop timer: 36.9129s (after computation of next merge)
+[t=38.5234s, 1076756 KB] M&S algorithm main loop timer: 38.0409s (after shrinking)
+[t=39.0274s, 1076756 KB] M&S algorithm main loop timer: 38.5449s (after merging)
+
+[t=39.0593s, 1076756 KB] Next pair of indices: (186, 478)
+[t=39.0593s, 1076756 KB] M&S algorithm main loop timer: 38.5769s (after computation of next merge)
+[t=39.7073s, 1076756 KB] M&S algorithm main loop timer: 39.2249s (after shrinking)
+[t=39.7113s, 1076756 KB] M&S algorithm main loop timer: 39.2289s (after merging)
+
+[t=39.7313s, 1076756 KB] Next pair of indices: (187, 479)
+[t=39.7313s, 1076756 KB] M&S algorithm main loop timer: 39.2489s (after computation of next merge)
+[t=39.7313s, 1076756 KB] M&S algorithm main loop timer: 39.2489s (after merging)
+
+[t=39.7513s, 1076756 KB] Next pair of indices: (188, 480)
+[t=39.7513s, 1076756 KB] M&S algorithm main loop timer: 39.2689s (after computation of next merge)
+[t=39.7513s, 1076756 KB] M&S algorithm main loop timer: 39.2689s (after merging)
+
+[t=39.7713s, 1076756 KB] Next pair of indices: (189, 481)
+[t=39.7713s, 1076756 KB] M&S algorithm main loop timer: 39.2889s (after computation of next merge)
+[t=39.7713s, 1076756 KB] M&S algorithm main loop timer: 39.2889s (after merging)
+
+[t=39.7873s, 1076756 KB] Next pair of indices: (190, 482)
+[t=39.7873s, 1076756 KB] M&S algorithm main loop timer: 39.3049s (after computation of next merge)
+[t=39.7913s, 1076756 KB] M&S algorithm main loop timer: 39.3089s (after merging)
+
+[t=39.8073s, 1076756 KB] Next pair of indices: (191, 483)
+[t=39.8073s, 1076756 KB] M&S algorithm main loop timer: 39.3249s (after computation of next merge)
+[t=39.8113s, 1076756 KB] M&S algorithm main loop timer: 39.3289s (after merging)
+
+[t=39.8273s, 1076756 KB] Next pair of indices: (192, 484)
+[t=39.8273s, 1076756 KB] M&S algorithm main loop timer: 39.3449s (after computation of next merge)
+[t=39.8353s, 1076756 KB] M&S algorithm main loop timer: 39.3529s (after merging)
+
+[t=39.8513s, 1076756 KB] Next pair of indices: (193, 485)
+[t=39.8513s, 1076756 KB] M&S algorithm main loop timer: 39.3689s (after computation of next merge)
+[t=39.8593s, 1076756 KB] M&S algorithm main loop timer: 39.3769s (after merging)
+
+[t=39.8753s, 1076756 KB] Next pair of indices: (194, 486)
+[t=39.8753s, 1076756 KB] M&S algorithm main loop timer: 39.3929s (after computation of next merge)
+[t=39.8913s, 1076756 KB] M&S algorithm main loop timer: 39.4089s (after merging)
+
+[t=39.9073s, 1076756 KB] Next pair of indices: (195, 487)
+[t=39.9113s, 1076756 KB] M&S algorithm main loop timer: 39.4289s (after computation of next merge)
+[t=39.9513s, 1076756 KB] M&S algorithm main loop timer: 39.4689s (after merging)
+
+[t=39.9673s, 1076756 KB] Next pair of indices: (196, 488)
+[t=39.9673s, 1076756 KB] M&S algorithm main loop timer: 39.4849s (after computation of next merge)
+[t=40.0713s, 1076756 KB] M&S algorithm main loop timer: 39.5889s (after merging)
+
+[t=40.0913s, 1076756 KB] Next pair of indices: (197, 489)
+[t=40.0913s, 1076756 KB] M&S algorithm main loop timer: 39.6088s (after computation of next merge)
+[t=40.3353s, 1076756 KB] M&S algorithm main loop timer: 39.8528s (after merging)
+
+[t=40.3553s, 1076756 KB] Next pair of indices: (198, 490)
+[t=40.3553s, 1076756 KB] M&S algorithm main loop timer: 39.8728s (after computation of next merge)
+[t=40.9633s, 1076756 KB] M&S algorithm main loop timer: 40.4808s (after merging)
+
+[t=40.9913s, 1076756 KB] Next pair of indices: (199, 491)
+[t=40.9913s, 1076756 KB] M&S algorithm main loop timer: 40.5088s (after computation of next merge)
+[t=42.1792s, 1076756 KB] M&S algorithm main loop timer: 41.6967s (after shrinking)
+[t=42.8632s, 1076756 KB] M&S algorithm main loop timer: 42.3807s (after merging)
+
+[t=42.8952s, 1076756 KB] Next pair of indices: (200, 492)
+[t=42.8952s, 1076756 KB] M&S algorithm main loop timer: 42.4127s (after computation of next merge)
+[t=44.0311s, 1076756 KB] M&S algorithm main loop timer: 43.5486s (after shrinking)
+[t=44.503s, 1076756 KB] M&S algorithm main loop timer: 44.0206s (after merging)
+
+[t=44.531s, 1076756 KB] Next pair of indices: (201, 493)
+[t=44.531s, 1076756 KB] M&S algorithm main loop timer: 44.0486s (after computation of next merge)
+[t=45.159s, 1076756 KB] M&S algorithm main loop timer: 44.6766s (after shrinking)
+[t=45.163s, 1076756 KB] M&S algorithm main loop timer: 44.6806s (after merging)
+
+[t=45.175s, 1076756 KB] Next pair of indices: (202, 494)
+[t=45.175s, 1076756 KB] M&S algorithm main loop timer: 44.6926s (after computation of next merge)
+[t=45.179s, 1076756 KB] M&S algorithm main loop timer: 44.6966s (after merging)
+
+[t=45.191s, 1076756 KB] Next pair of indices: (203, 495)
+[t=45.191s, 1076756 KB] M&S algorithm main loop timer: 44.7126s (after computation of next merge)
+[t=45.195s, 1076756 KB] M&S algorithm main loop timer: 44.7126s (after merging)
+
+[t=45.211s, 1076756 KB] Next pair of indices: (204, 496)
+[t=45.211s, 1076756 KB] M&S algorithm main loop timer: 44.7286s (after computation of next merge)
+[t=45.211s, 1076756 KB] M&S algorithm main loop timer: 44.7286s (after merging)
+
+[t=45.227s, 1076756 KB] Next pair of indices: (205, 497)
+[t=45.227s, 1076756 KB] M&S algorithm main loop timer: 44.7446s (after computation of next merge)
+[t=45.227s, 1076756 KB] M&S algorithm main loop timer: 44.7446s (after merging)
+
+[t=45.243s, 1076756 KB] Next pair of indices: (206, 498)
+[t=45.243s, 1076756 KB] M&S algorithm main loop timer: 44.7606s (after computation of next merge)
+[t=45.247s, 1076756 KB] M&S algorithm main loop timer: 44.7646s (after merging)
+
+[t=45.259s, 1076756 KB] Next pair of indices: (207, 499)
+[t=45.259s, 1076756 KB] M&S algorithm main loop timer: 44.7766s (after computation of next merge)
+[t=45.263s, 1076756 KB] M&S algorithm main loop timer: 44.7806s (after merging)
+
+[t=45.279s, 1076756 KB] Next pair of indices: (208, 500)
+[t=45.279s, 1076756 KB] M&S algorithm main loop timer: 44.7966s (after computation of next merge)
+[t=45.287s, 1076756 KB] M&S algorithm main loop timer: 44.8046s (after merging)
+
+[t=45.299s, 1076756 KB] Next pair of indices: (209, 501)
+[t=45.299s, 1076756 KB] M&S algorithm main loop timer: 44.8166s (after computation of next merge)
+[t=45.315s, 1076756 KB] M&S algorithm main loop timer: 44.8326s (after merging)
+
+[t=45.331s, 1076756 KB] Next pair of indices: (210, 502)
+[t=45.331s, 1076756 KB] M&S algorithm main loop timer: 44.8486s (after computation of next merge)
+[t=45.371s, 1076756 KB] M&S algorithm main loop timer: 44.8886s (after merging)
+
+[t=45.383s, 1076756 KB] Next pair of indices: (211, 503)
+[t=45.383s, 1076756 KB] M&S algorithm main loop timer: 44.9006s (after computation of next merge)
+[t=45.483s, 1076756 KB] M&S algorithm main loop timer: 45.0006s (after merging)
+
+[t=45.499s, 1076756 KB] Next pair of indices: (212, 504)
+[t=45.499s, 1076756 KB] M&S algorithm main loop timer: 45.0165s (after computation of next merge)
+[t=45.719s, 1076756 KB] M&S algorithm main loop timer: 45.2366s (after merging)
+
+[t=45.739s, 1076756 KB] Next pair of indices: (213, 505)
+[t=45.739s, 1076756 KB] M&S algorithm main loop timer: 45.2565s (after computation of next merge)
+[t=46.351s, 1076756 KB] M&S algorithm main loop timer: 45.8685s (after merging)
+
+[t=46.379s, 1076756 KB] Next pair of indices: (214, 506)
+[t=46.379s, 1076756 KB] M&S algorithm main loop timer: 45.8965s (after computation of next merge)
+[t=47.5589s, 1076756 KB] M&S algorithm main loop timer: 47.0765s (after shrinking)
+[t=48.2869s, 1076756 KB] M&S algorithm main loop timer: 47.8044s (after merging)
+
+[t=48.3149s, 1076756 KB] Next pair of indices: (215, 507)
+[t=48.3149s, 1076756 KB] M&S algorithm main loop timer: 47.8324s (after computation of next merge)
+[t=49.5028s, 1076756 KB] M&S algorithm main loop timer: 49.0204s (after shrinking)
+[t=50.0268s, 1076756 KB] M&S algorithm main loop timer: 49.5443s (after merging)
+
+[t=50.0508s, 1076756 KB] Next pair of indices: (216, 508)
+[t=50.0508s, 1076756 KB] M&S algorithm main loop timer: 49.5683s (after computation of next merge)
+[t=50.7387s, 1076756 KB] M&S algorithm main loop timer: 50.2563s (after shrinking)
+[t=50.7427s, 1076756 KB] M&S algorithm main loop timer: 50.2603s (after merging)
+
+[t=50.7548s, 1076756 KB] Next pair of indices: (217, 509)
+[t=50.7548s, 1076756 KB] M&S algorithm main loop timer: 50.2723s (after computation of next merge)
+[t=50.7587s, 1076756 KB] M&S algorithm main loop timer: 50.2763s (after merging)
+
+[t=50.7707s, 1076756 KB] Next pair of indices: (218, 510)
+[t=50.7707s, 1076756 KB] M&S algorithm main loop timer: 50.2883s (after computation of next merge)
+[t=50.7707s, 1076756 KB] M&S algorithm main loop timer: 50.2883s (after merging)
+
+[t=50.7827s, 1076756 KB] Next pair of indices: (219, 511)
+[t=50.7827s, 1076756 KB] M&S algorithm main loop timer: 50.3003s (after computation of next merge)
+[t=50.7867s, 1076756 KB] M&S algorithm main loop timer: 50.3043s (after merging)
+
+[t=50.7947s, 1076756 KB] Next pair of indices: (220, 512)
+[t=50.7987s, 1076756 KB] M&S algorithm main loop timer: 50.3163s (after computation of next merge)
+[t=50.7987s, 1076756 KB] M&S algorithm main loop timer: 50.3163s (after merging)
+
+[t=50.8107s, 1076756 KB] Next pair of indices: (221, 513)
+[t=50.8107s, 1076756 KB] M&S algorithm main loop timer: 50.3283s (after computation of next merge)
+[t=50.8147s, 1076756 KB] M&S algorithm main loop timer: 50.3323s (after merging)
+
+[t=50.8228s, 1076756 KB] Next pair of indices: (222, 514)
+[t=50.8228s, 1076756 KB] M&S algorithm main loop timer: 50.3403s (after computation of next merge)
+[t=50.8307s, 1076756 KB] M&S algorithm main loop timer: 50.3483s (after merging)
+
+[t=50.8388s, 1076756 KB] Next pair of indices: (223, 515)
+[t=50.8388s, 1076756 KB] M&S algorithm main loop timer: 50.3563s (after computation of next merge)
+[t=50.8507s, 1076756 KB] M&S algorithm main loop timer: 50.3683s (after merging)
+
+[t=50.8587s, 1076756 KB] Next pair of indices: (224, 516)
+[t=50.8587s, 1076756 KB] M&S algorithm main loop timer: 50.3763s (after computation of next merge)
+[t=50.8787s, 1076756 KB] M&S algorithm main loop timer: 50.3963s (after merging)
+
+[t=50.8907s, 1076756 KB] Next pair of indices: (225, 517)
+[t=50.8907s, 1076756 KB] M&S algorithm main loop timer: 50.4083s (after computation of next merge)
+[t=50.9388s, 1076756 KB] M&S algorithm main loop timer: 50.4563s (after merging)
+
+[t=50.9507s, 1076756 KB] Next pair of indices: (226, 518)
+[t=50.9507s, 1076756 KB] M&S algorithm main loop timer: 50.4683s (after computation of next merge)
+[t=51.0707s, 1076756 KB] M&S algorithm main loop timer: 50.5883s (after merging)
+
+[t=51.0867s, 1076756 KB] Next pair of indices: (227, 519)
+[t=51.0867s, 1076756 KB] M&S algorithm main loop timer: 50.6043s (after computation of next merge)
+[t=51.3827s, 1076756 KB] M&S algorithm main loop timer: 50.9003s (after merging)
+
+[t=51.3987s, 1076756 KB] Next pair of indices: (228, 520)
+[t=51.3987s, 1076756 KB] M&S algorithm main loop timer: 50.9163s (after computation of next merge)
+[t=52.1747s, 1076756 KB] M&S algorithm main loop timer: 51.6923s (after merging)
+
+[t=52.2027s, 1076756 KB] Next pair of indices: (229, 521)
+[t=52.2027s, 1076756 KB] M&S algorithm main loop timer: 51.7203s (after computation of next merge)
+[t=53.7027s, 1076756 KB] M&S algorithm main loop timer: 53.2202s (after shrinking)
+[t=54.5906s, 1076756 KB] M&S algorithm main loop timer: 54.1081s (after merging)
+
+[t=54.6186s, 1076756 KB] Next pair of indices: (230, 522)
+[t=54.6186s, 1076756 KB] M&S algorithm main loop timer: 54.1361s (after computation of next merge)
+[t=56.0945s, 1076756 KB] M&S algorithm main loop timer: 55.6121s (after shrinking)
+[t=56.7145s, 1076756 KB] M&S algorithm main loop timer: 56.232s (after merging)
+
+[t=56.7385s, 1076756 KB] Next pair of indices: (231, 523)
+[t=56.7385s, 1076756 KB] M&S algorithm main loop timer: 56.256s (after computation of next merge)
+[t=57.5584s, 1076756 KB] M&S algorithm main loop timer: 57.076s (after shrinking)
+[t=57.5664s, 1076756 KB] M&S algorithm main loop timer: 57.084s (after merging)
+
+[t=57.5744s, 1076756 KB] Next pair of indices: (232, 524)
+[t=57.5744s, 1076756 KB] M&S algorithm main loop timer: 57.092s (after computation of next merge)
+[t=57.5784s, 1076756 KB] M&S algorithm main loop timer: 57.096s (after merging)
+
+[t=57.5864s, 1076756 KB] Next pair of indices: (233, 525)
+[t=57.5864s, 1076756 KB] M&S algorithm main loop timer: 57.104s (after computation of next merge)
+[t=57.5864s, 1076756 KB] M&S algorithm main loop timer: 57.104s (after merging)
+
+[t=57.5984s, 1076756 KB] Next pair of indices: (234, 526)
+[t=57.5984s, 1076756 KB] M&S algorithm main loop timer: 57.116s (after computation of next merge)
+[t=57.5984s, 1076756 KB] M&S algorithm main loop timer: 57.116s (after merging)
+
+[t=57.6064s, 1076756 KB] Next pair of indices: (235, 527)
+[t=57.6064s, 1076756 KB] M&S algorithm main loop timer: 57.124s (after computation of next merge)
+[t=57.6104s, 1076756 KB] M&S algorithm main loop timer: 57.128s (after merging)
+
+[t=57.6184s, 1076756 KB] Next pair of indices: (236, 528)
+[t=57.6184s, 1076756 KB] M&S algorithm main loop timer: 57.136s (after computation of next merge)
+[t=57.6224s, 1076756 KB] M&S algorithm main loop timer: 57.14s (after merging)
+
+[t=57.6304s, 1076756 KB] Next pair of indices: (237, 529)
+[t=57.6304s, 1076756 KB] M&S algorithm main loop timer: 57.148s (after computation of next merge)
+[t=57.6344s, 1076756 KB] M&S algorithm main loop timer: 57.152s (after merging)
+
+[t=57.6424s, 1076756 KB] Next pair of indices: (238, 530)
+[t=57.6424s, 1076756 KB] M&S algorithm main loop timer: 57.16s (after computation of next merge)
+[t=57.6504s, 1076756 KB] M&S algorithm main loop timer: 57.168s (after merging)
+
+[t=57.6584s, 1076756 KB] Next pair of indices: (239, 531)
+[t=57.6584s, 1076756 KB] M&S algorithm main loop timer: 57.176s (after computation of next merge)
+[t=57.6744s, 1076756 KB] M&S algorithm main loop timer: 57.192s (after merging)
+
+[t=57.6824s, 1076756 KB] Next pair of indices: (240, 532)
+[t=57.6824s, 1076756 KB] M&S algorithm main loop timer: 57.2s (after computation of next merge)
+[t=57.7224s, 1076756 KB] M&S algorithm main loop timer: 57.24s (after merging)
+
+[t=57.7304s, 1076756 KB] Next pair of indices: (241, 533)
+[t=57.7304s, 1076756 KB] M&S algorithm main loop timer: 57.248s (after computation of next merge)
+[t=57.8264s, 1076756 KB] M&S algorithm main loop timer: 57.344s (after merging)
+
+[t=57.8384s, 1076756 KB] Next pair of indices: (242, 534)
+[t=57.8384s, 1076756 KB] M&S algorithm main loop timer: 57.356s (after computation of next merge)
+[t=58.0744s, 1076756 KB] M&S algorithm main loop timer: 57.592s (after merging)
+
+[t=58.0864s, 1076756 KB] Next pair of indices: (243, 535)
+[t=58.0864s, 1076756 KB] M&S algorithm main loop timer: 57.604s (after computation of next merge)
+[t=58.7024s, 1076756 KB] M&S algorithm main loop timer: 58.2199s (after merging)
+
+[t=58.7224s, 1076756 KB] Next pair of indices: (244, 536)
+[t=58.7224s, 1076756 KB] M&S algorithm main loop timer: 58.2399s (after computation of next merge)
+[t=59.9263s, 1076756 KB] M&S algorithm main loop timer: 59.4439s (after shrinking)
+[t=60.6743s, 1076756 KB] M&S algorithm main loop timer: 60.1918s (after merging)
+
+[t=60.6983s, 1076756 KB] Next pair of indices: (245, 537)
+[t=60.6983s, 1076756 KB] M&S algorithm main loop timer: 60.2158s (after computation of next merge)
+[t=61.9142s, 1076756 KB] M&S algorithm main loop timer: 61.4318s (after shrinking)
+[t=62.4382s, 1076756 KB] M&S algorithm main loop timer: 61.9558s (after merging)
+
+[t=62.4582s, 1076756 KB] Next pair of indices: (246, 538)
+[t=62.4582s, 1076756 KB] M&S algorithm main loop timer: 61.9757s (after computation of next merge)
+[t=63.1382s, 1076756 KB] M&S algorithm main loop timer: 62.6557s (after shrinking)
+[t=63.1422s, 1076756 KB] M&S algorithm main loop timer: 62.6597s (after merging)
+
+[t=63.1502s, 1076756 KB] Next pair of indices: (247, 539)
+[t=63.1502s, 1076756 KB] M&S algorithm main loop timer: 62.6677s (after computation of next merge)
+[t=63.1542s, 1076756 KB] M&S algorithm main loop timer: 62.6717s (after merging)
+
+[t=63.1582s, 1076756 KB] Next pair of indices: (248, 540)
+[t=63.1582s, 1076756 KB] M&S algorithm main loop timer: 62.6757s (after computation of next merge)
+[t=63.1622s, 1076756 KB] M&S algorithm main loop timer: 62.6797s (after merging)
+
+[t=63.1662s, 1076756 KB] Next pair of indices: (249, 541)
+[t=63.1662s, 1076756 KB] M&S algorithm main loop timer: 62.6837s (after computation of next merge)
+[t=63.1702s, 1076756 KB] M&S algorithm main loop timer: 62.6877s (after merging)
+
+[t=63.1742s, 1076756 KB] Next pair of indices: (250, 542)
+[t=63.1742s, 1076756 KB] M&S algorithm main loop timer: 62.6917s (after computation of next merge)
+[t=63.1782s, 1076756 KB] M&S algorithm main loop timer: 62.6957s (after merging)
+
+[t=63.1862s, 1076756 KB] Next pair of indices: (251, 543)
+[t=63.1862s, 1076756 KB] M&S algorithm main loop timer: 62.7037s (after computation of next merge)
+[t=63.1862s, 1076756 KB] M&S algorithm main loop timer: 62.7037s (after merging)
+
+[t=63.1942s, 1076756 KB] Next pair of indices: (252, 544)
+[t=63.1942s, 1076756 KB] M&S algorithm main loop timer: 62.7117s (after computation of next merge)
+[t=63.1982s, 1076756 KB] M&S algorithm main loop timer: 62.7157s (after merging)
+
+[t=63.2022s, 1076756 KB] Next pair of indices: (253, 545)
+[t=63.2022s, 1076756 KB] M&S algorithm main loop timer: 62.7197s (after computation of next merge)
+[t=63.2102s, 1076756 KB] M&S algorithm main loop timer: 62.7277s (after merging)
+
+[t=63.2182s, 1076756 KB] Next pair of indices: (254, 546)
+[t=63.2182s, 1076756 KB] M&S algorithm main loop timer: 62.7357s (after computation of next merge)
+[t=63.2302s, 1076756 KB] M&S algorithm main loop timer: 62.7477s (after merging)
+[t=63.2342s, 1076756 KB] M&S algorithm main loop timer: 62.7517s (after pruning)
+
+[t=63.2382s, 1076756 KB] Next pair of indices: (255, 547)
+[t=63.2422s, 1076756 KB] M&S algorithm main loop timer: 62.7597s (after computation of next merge)
+[t=63.2702s, 1076756 KB] M&S algorithm main loop timer: 62.7877s (after merging)
+
+[t=63.2742s, 1076756 KB] Next pair of indices: (256, 548)
+[t=63.2742s, 1076756 KB] M&S algorithm main loop timer: 62.7917s (after computation of next merge)
+[t=63.3502s, 1076756 KB] M&S algorithm main loop timer: 62.8677s (after merging)
+
+[t=63.3542s, 1076756 KB] Next pair of indices: (257, 549)
+[t=63.3542s, 1076756 KB] M&S algorithm main loop timer: 62.8717s (after computation of next merge)
+[t=63.4942s, 1076756 KB] M&S algorithm main loop timer: 63.0117s (after merging)
+[t=63.5421s, 1076756 KB] M&S algorithm main loop timer: 63.0597s (after pruning)
+
+[t=63.5501s, 1076756 KB] Next pair of indices: (258, 550)
+[t=63.5501s, 1076756 KB] M&S algorithm main loop timer: 63.0677s (after computation of next merge)
+[t=63.8341s, 1076756 KB] M&S algorithm main loop timer: 63.3517s (after merging)
+
+[t=63.8501s, 1076756 KB] Next pair of indices: (259, 551)
+[t=63.8501s, 1076756 KB] M&S algorithm main loop timer: 63.3677s (after computation of next merge)
+[t=64.4101s, 1076756 KB] M&S algorithm main loop timer: 63.9276s (after shrinking)
+[t=64.7461s, 1076756 KB] M&S algorithm main loop timer: 64.2636s (after merging)
+
+[t=64.7621s, 1076756 KB] Next pair of indices: (260, 552)
+[t=64.7621s, 1076756 KB] M&S algorithm main loop timer: 64.2796s (after computation of next merge)
+[t=65.306s, 1076756 KB] M&S algorithm main loop timer: 64.8235s (after shrinking)
+[t=65.51s, 1076756 KB] M&S algorithm main loop timer: 65.0276s (after merging)
+
+[t=65.518s, 1076756 KB] Next pair of indices: (261, 553)
+[t=65.518s, 1076756 KB] M&S algorithm main loop timer: 65.0356s (after computation of next merge)
+[t=65.778s, 1076756 KB] M&S algorithm main loop timer: 65.2955s (after shrinking)
+[t=65.778s, 1076756 KB] M&S algorithm main loop timer: 65.2955s (after merging)
+
+[t=65.782s, 1076756 KB] Next pair of indices: (262, 554)
+[t=65.786s, 1076756 KB] M&S algorithm main loop timer: 65.3035s (after computation of next merge)
+[t=65.786s, 1076756 KB] M&S algorithm main loop timer: 65.3035s (after merging)
+
+[t=65.79s, 1076756 KB] Next pair of indices: (263, 555)
+[t=65.79s, 1076756 KB] M&S algorithm main loop timer: 65.3075s (after computation of next merge)
+[t=65.794s, 1076756 KB] M&S algorithm main loop timer: 65.3115s (after merging)
+
+[t=65.798s, 1076756 KB] Next pair of indices: (264, 556)
+[t=65.798s, 1076756 KB] M&S algorithm main loop timer: 65.3155s (after computation of next merge)
+[t=65.798s, 1076756 KB] M&S algorithm main loop timer: 65.3155s (after merging)
+
+[t=65.802s, 1076756 KB] Next pair of indices: (265, 557)
+[t=65.802s, 1076756 KB] M&S algorithm main loop timer: 65.3195s (after computation of next merge)
+[t=65.806s, 1076756 KB] M&S algorithm main loop timer: 65.3235s (after merging)
+
+[t=65.81s, 1076756 KB] Next pair of indices: (266, 558)
+[t=65.81s, 1076756 KB] M&S algorithm main loop timer: 65.3275s (after computation of next merge)
+[t=65.81s, 1076756 KB] M&S algorithm main loop timer: 65.3275s (after merging)
+
+[t=65.814s, 1076756 KB] Next pair of indices: (267, 559)
+[t=65.814s, 1076756 KB] M&S algorithm main loop timer: 65.3315s (after computation of next merge)
+[t=65.818s, 1076756 KB] M&S algorithm main loop timer: 65.3355s (after merging)
+
+[t=65.822s, 1076756 KB] Next pair of indices: (268, 560)
+[t=65.822s, 1076756 KB] M&S algorithm main loop timer: 65.3395s (after computation of next merge)
+[t=65.83s, 1076756 KB] M&S algorithm main loop timer: 65.3475s (after merging)
+
+[t=65.834s, 1076756 KB] Next pair of indices: (269, 561)
+[t=65.834s, 1076756 KB] M&S algorithm main loop timer: 65.3515s (after computation of next merge)
+[t=65.846s, 1076756 KB] M&S algorithm main loop timer: 65.3635s (after merging)
+[t=65.85s, 1076756 KB] M&S algorithm main loop timer: 65.3675s (after pruning)
+
+[t=65.85s, 1076756 KB] Next pair of indices: (270, 562)
+[t=65.85s, 1076756 KB] M&S algorithm main loop timer: 65.3675s (after computation of next merge)
+[t=65.874s, 1076756 KB] M&S algorithm main loop timer: 65.3915s (after merging)
+
+[t=65.878s, 1076756 KB] Next pair of indices: (271, 563)
+[t=65.878s, 1076756 KB] M&S algorithm main loop timer: 65.3955s (after computation of next merge)
+[t=65.922s, 1076756 KB] M&S algorithm main loop timer: 65.4395s (after merging)
+[t=65.934s, 1076756 KB] M&S algorithm main loop timer: 65.4515s (after pruning)
+
+[t=65.938s, 1076756 KB] Next pair of indices: (272, 564)
+[t=65.938s, 1076756 KB] M&S algorithm main loop timer: 65.4555s (after computation of next merge)
+[t=66.022s, 1076756 KB] M&S algorithm main loop timer: 65.5395s (after merging)
+
+[t=66.026s, 1076756 KB] Next pair of indices: (273, 565)
+[t=66.026s, 1076756 KB] M&S algorithm main loop timer: 65.5435s (after computation of next merge)
+[t=66.234s, 1076756 KB] M&S algorithm main loop timer: 65.7515s (after merging)
+
+[t=66.242s, 1076756 KB] Next pair of indices: (274, 566)
+[t=66.242s, 1076756 KB] M&S algorithm main loop timer: 65.7595s (after computation of next merge)
+[t=66.63s, 1076756 KB] M&S algorithm main loop timer: 66.1475s (after shrinking)
+[t=66.8699s, 1076756 KB] M&S algorithm main loop timer: 66.3875s (after merging)
+
+[t=66.8779s, 1076756 KB] Next pair of indices: (275, 567)
+[t=66.8779s, 1076756 KB] M&S algorithm main loop timer: 66.3955s (after computation of next merge)
+[t=67.2459s, 1076756 KB] M&S algorithm main loop timer: 66.7635s (after shrinking)
+[t=67.4259s, 1076756 KB] M&S algorithm main loop timer: 66.9435s (after merging)
+
+[t=67.4339s, 1076756 KB] Next pair of indices: (276, 568)
+[t=67.4339s, 1076756 KB] M&S algorithm main loop timer: 66.9515s (after computation of next merge)
+[t=67.6539s, 1076756 KB] M&S algorithm main loop timer: 67.1715s (after shrinking)
+[t=67.6579s, 1076756 KB] M&S algorithm main loop timer: 67.1755s (after merging)
+
+[t=67.6579s, 1076756 KB] Next pair of indices: (277, 569)
+[t=67.6579s, 1076756 KB] M&S algorithm main loop timer: 67.1755s (after computation of next merge)
+[t=67.6619s, 1076756 KB] M&S algorithm main loop timer: 67.1795s (after merging)
+
+[t=67.6619s, 1076756 KB] Next pair of indices: (278, 570)
+[t=67.6619s, 1076756 KB] M&S algorithm main loop timer: 67.1795s (after computation of next merge)
+[t=67.6659s, 1076756 KB] M&S algorithm main loop timer: 67.1835s (after merging)
+
+[t=67.6659s, 1076756 KB] Next pair of indices: (279, 571)
+[t=67.6659s, 1076756 KB] M&S algorithm main loop timer: 67.1835s (after computation of next merge)
+[t=67.6699s, 1076756 KB] M&S algorithm main loop timer: 67.1875s (after merging)
+
+[t=67.6699s, 1076756 KB] Next pair of indices: (280, 572)
+[t=67.6699s, 1076756 KB] M&S algorithm main loop timer: 67.1875s (after computation of next merge)
+[t=67.6739s, 1076756 KB] M&S algorithm main loop timer: 67.1915s (after merging)
+
+[t=67.6739s, 1076756 KB] Next pair of indices: (281, 573)
+[t=67.6739s, 1076756 KB] M&S algorithm main loop timer: 67.1915s (after computation of next merge)
+[t=67.6779s, 1076756 KB] M&S algorithm main loop timer: 67.1955s (after merging)
+
+[t=67.6779s, 1076756 KB] Next pair of indices: (282, 574)
+[t=67.6779s, 1076756 KB] M&S algorithm main loop timer: 67.1955s (after computation of next merge)
+[t=67.6819s, 1076756 KB] M&S algorithm main loop timer: 67.1995s (after merging)
+
+[t=67.6859s, 1076756 KB] Next pair of indices: (283, 575)
+[t=67.6859s, 1076756 KB] M&S algorithm main loop timer: 67.2035s (after computation of next merge)
+[t=67.6899s, 1076756 KB] M&S algorithm main loop timer: 67.2075s (after merging)
+
+[t=67.6899s, 1076756 KB] Next pair of indices: (284, 576)
+[t=67.6899s, 1076756 KB] M&S algorithm main loop timer: 67.2075s (after computation of next merge)
+[t=67.7019s, 1076756 KB] M&S algorithm main loop timer: 67.2195s (after merging)
+
+[t=67.7019s, 1076756 KB] Next pair of indices: (285, 577)
+[t=67.7019s, 1076756 KB] M&S algorithm main loop timer: 67.2195s (after computation of next merge)
+[t=67.7219s, 1076756 KB] M&S algorithm main loop timer: 67.2395s (after merging)
+
+[t=67.7219s, 1076756 KB] Next pair of indices: (286, 578)
+[t=67.7219s, 1076756 KB] M&S algorithm main loop timer: 67.2395s (after computation of next merge)
+[t=67.7619s, 1076756 KB] M&S algorithm main loop timer: 67.2795s (after merging)
+
+[t=67.7619s, 1076756 KB] Next pair of indices: (287, 579)
+[t=67.7619s, 1076756 KB] M&S algorithm main loop timer: 67.2795s (after computation of next merge)
+[t=67.8499s, 1076756 KB] M&S algorithm main loop timer: 67.3675s (after merging)
+
+[t=67.8539s, 1076756 KB] Next pair of indices: (288, 580)
+[t=67.8539s, 1076756 KB] M&S algorithm main loop timer: 67.3715s (after computation of next merge)
+[t=68.0139s, 1076756 KB] M&S algorithm main loop timer: 67.5315s (after shrinking)
+[t=68.1579s, 1076756 KB] M&S algorithm main loop timer: 67.6754s (after merging)
+
+[t=68.1659s, 1076756 KB] Next pair of indices: (290, 581)
+[t=68.1659s, 1076756 KB] M&S algorithm main loop timer: 67.6834s (after computation of next merge)
+[t=68.4859s, 1076756 KB] M&S algorithm main loop timer: 68.0034s (after shrinking)
+[t=68.5819s, 1076756 KB] M&S algorithm main loop timer: 68.0994s (after merging)
+
+[t=68.5859s, 1076756 KB] Next pair of indices: (291, 582)
+[t=68.5859s, 1076756 KB] M&S algorithm main loop timer: 68.1034s (after computation of next merge)
+[t=68.7819s, 1076756 KB] M&S algorithm main loop timer: 68.2994s (after merging)
+
+[t=68.7859s, 1076756 KB] Next pair of indices: (292, 583)
+[t=68.7859s, 1076756 KB] M&S algorithm main loop timer: 68.3034s (after computation of next merge)
+[t=69.1298s, 1076756 KB] M&S algorithm main loop timer: 68.6474s (after shrinking)
+[t=69.3138s, 1076756 KB] M&S algorithm main loop timer: 68.8314s (after merging)
+
+[t=69.3138s, 1076756 KB] End of merge-and-shrink algorithm, statistics:
+[t=69.3138s, 1076756 KB] Main loop runtime: 68.8314s
+[t=69.3138s, 1076756 KB] Maximum intermediate abstraction size: 49184
+[t=69.3138s, 1076756 KB] Final peak memory increase of merge-and-shrink algorithm: 1011960 KB
+[t=69.3138s, 1076756 KB] Merge-and-shrink algorithm runtime: 69.1833s
+
+[t=69.3138s, 1076756 KB] Number of remaining factors: 1
+[t=69.3138s, 1076756 KB] Number of factors kept: 1
+[t=69.3138s, 1076756 KB] Done initializing merge-and-shrink heuristic.
+
+[t=69.3178s, 1076756 KB] Building successor generator...done!
+[t=69.3258s, 1076756 KB] peak memory difference for successor generator creation: 0 KB
+[t=69.3258s, 1076756 KB] time for successor generation creation: 0.007998s
+[t=69.3258s, 1076756 KB] Variables: 293
+[t=69.3258s, 1076756 KB] FactPairs: 589
+[t=69.3298s, 1076756 KB] Bytes per state: 40
+[t=69.3298s, 1076756 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=69.3298s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 7
+[t=69.3298s, 1076756 KB] g=0, 1 evaluated, 0 expanded
+[t=69.3298s, 1076756 KB] f = 7, 1 evaluated, 0 expanded
+[t=69.3298s, 1076756 KB] Initial heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 7
+[t=69.3298s, 1076756 KB] pruning method: none
+[t=69.3298s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 6
+[t=69.3298s, 1076756 KB] g=1, 5 evaluated, 1 expanded
+[t=69.3298s, 1076756 KB] f = 8, 8 evaluated, 2 expanded
+[t=69.3298s, 1076756 KB] f = 9, 12 evaluated, 6 expanded
+[t=69.3298s, 1076756 KB] f = 10, 18 evaluated, 12 expanded
+[t=69.3298s, 1076756 KB] f = 11, 30 evaluated, 16 expanded
+[t=69.3298s, 1076756 KB] f = 12, 60 evaluated, 34 expanded
+[t=69.3298s, 1076756 KB] f = 13, 118 evaluated, 66 expanded
+[t=69.3298s, 1076756 KB] f = 14, 210 evaluated, 130 expanded
+[t=69.3338s, 1076756 KB] f = 15, 366 evaluated, 228 expanded
+[t=69.3378s, 1076756 KB] f = 16, 616 evaluated, 392 expanded
+[t=69.3418s, 1076756 KB] f = 17, 1052 evaluated, 660 expanded
+[t=69.3538s, 1076756 KB] f = 18, 1836 evaluated, 1140 expanded
+[t=69.3698s, 1076756 KB] f = 19, 3092 evaluated, 1958 expanded
+[t=69.3978s, 1076756 KB] f = 20, 5199 evaluated, 3298 expanded
+[t=69.4138s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 5
+[t=69.4138s, 1076756 KB] g=15, 6311 evaluated, 4181 expanded
+[t=69.4138s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 4
+[t=69.4138s, 1076756 KB] g=16, 6320 evaluated, 4185 expanded
+[t=69.4138s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 3
+[t=69.4138s, 1076756 KB] g=17, 6321 evaluated, 4186 expanded
+[t=69.4138s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 2
+[t=69.4138s, 1076756 KB] g=18, 6323 evaluated, 4187 expanded
+[t=69.4418s, 1076756 KB] f = 21, 8531 evaluated, 5524 expanded
+[t=69.5098s, 1076756 KB] f = 22, 13934 evaluated, 8993 expanded
+[t=69.5378s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 1
+[t=69.5378s, 1076756 KB] g=21, 15425 evaluated, 10699 expanded
+[t=69.6218s, 1076756 KB] f = 23, 22532 evaluated, 14750 expanded
+[t=69.8018s, 1076756 KB] f = 24, 36497 evaluated, 23714 expanded
+[t=70.0938s, 1076756 KB] f = 25, 58930 evaluated, 38648 expanded
+[t=70.5458s, 1076756 KB] f = 26, 94680 evaluated, 61778 expanded
+[t=71.2898s, 1076756 KB] f = 27, 151794 evaluated, 100064 expanded
+[t=72.4458s, 1076756 KB] f = 28, 240813 evaluated, 158702 expanded
+[t=74.3017s, 1076756 KB] f = 29, 383360 evaluated, 254143 expanded
+[t=74.3017s, 1076756 KB] New best heuristic value for merge_and_shrink(merge_strategy = merge_sccs(order_of_sccs = topological, merge_selector = score_based_filtering(scoring_functions = list(goal_relevance, dfp, total_order))), shrink_strategy = shrink_bisimulation(greedy = false)): 0
+[t=74.3017s, 1076756 KB] g=29, 383364 evaluated, 254147 expanded
+[t=74.3017s, 1076756 KB] Solution found!
+[t=74.3017s, 1076756 KB] Actual search time: 4.97191s
+finish-object object3 x4 y3 (1)
+unpark pr2 xrel0 yrel0 (1)
+base-right pr2 x0 x1 y0 (1)
+base-right pr2 x1 x2 y0 (1)
+base-right pr2 x2 x3 y0 (1)
+base-right pr2 x3 x4 y0 (1)
+base-right pr2 x4 x5 y0 (1)
+base-right pr2 x5 x6 y0 (1)
+base-down pr2 x6 y0 y1 (1)
+base-down pr2 x6 y1 y2 (1)
+base-left pr2 x6 x5 y2 (1)
+base-left pr2 x5 x4 y2 (1)
+base-left pr2 x4 x3 y2 (1)
+park pr2 (1)
+get-right pr2 x3 y2 xrel0 x3 yrel0 y2 object1 x4 (1)
+gripper-right pr2 x3 y2 xrel0 xrel1 x3 x4 yrel0 y2 (1)
+put-left pr2 x3 y2 xrel1 x4 yrel0 y2 object1 x3 (1)
+get-left pr2 x3 y2 xrel1 x4 yrel0 y2 object2 x3 (1)
+gripper-left pr2 x3 y2 xrel1 xrel0 x4 x3 yrel0 y2 (1)
+put-right pr2 x3 y2 xrel0 x3 yrel0 y2 object2 x4 (1)
+get-down pr2 x3 y2 xrel0 x3 yrel0 y2 object0 y3 (1)
+gripper-down pr2 x3 y2 xrel0 x3 yrel0 yrel1 y2 y3 (1)
+put-up pr2 x3 y2 xrel0 x3 yrel1 y3 object0 y2 (1)
+finish-object object0 x3 y2 (1)
+finish-object object2 x4 y2 (1)
+get-up pr2 x3 y2 xrel0 x3 yrel1 y3 object1 y2 (1)
+gripper-up pr2 x3 y2 xrel0 x3 yrel1 yrel0 y3 y2 (1)
+put-down pr2 x3 y2 xrel0 x3 yrel0 y2 object1 y3 (1)
+finish-object object1 x3 y3 (1)
+[t=74.3017s, 1076756 KB] Plan length: 29 step(s).
+[t=74.3017s, 1076756 KB] Plan cost: 29
+[t=74.3017s, 1076756 KB] Expanded 254148 state(s).
+[t=74.3017s, 1076756 KB] Reopened 0 state(s).
+[t=74.3017s, 1076756 KB] Evaluated 383364 state(s).
+[t=74.3017s, 1076756 KB] Evaluations: 383364
+[t=74.3017s, 1076756 KB] Generated 895729 state(s).
+[t=74.3017s, 1076756 KB] Dead ends: 0 state(s).
+[t=74.3017s, 1076756 KB] Expanded until last jump: 254143 state(s).
+[t=74.3017s, 1076756 KB] Reopened until last jump: 0 state(s).
+[t=74.3017s, 1076756 KB] Evaluated until last jump: 383360 state(s).
+[t=74.3017s, 1076756 KB] Generated until last jump: 895720 state(s).
+[t=74.3017s, 1076756 KB] Number of registered states: 383364
+[t=74.3017s, 1076756 KB] Int hash set load factor: 383364/524288 = 0.731209
+[t=74.3017s, 1076756 KB] Int hash set resizes: 19
+[t=74.3017s, 1076756 KB] Search time: 4.97191s
+[t=74.3017s, 1076756 KB] Total time: 74.3017s
+Solution found.
+Peak memory: 1076756 KB
+Remove intermediate file output.sas
+search exit code: 0
+
