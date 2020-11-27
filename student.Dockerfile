@@ -16,7 +16,7 @@ WORKDIR /src
 #CMD fd --overall-time-limit 1800s --overall-memory-limit 2G ./tidybot-domain.pddl ./instances/tidybot-instance1.pddl --search "astar(add())";
 
 # MERGE AND SHRINK heuristic
-CMD fd --overall-time-limit 1800s --overall-memory-limit 2G ./tidybot-domain.pddl ./instances/tidybot-instance18.pddl --search "astar(merge_and_shrink(merge_strategy=merge_sccs(order_of_sccs=topological,merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order])),shrink_strategy=shrink_bisimulation(greedy=false)))";
+#CMD fd --overall-time-limit 1800s --overall-memory-limit 350M ./tidybot-domain.pddl ./instances/tidybot-instance20.pddl --search "astar(merge_and_shrink(merge_strategy=merge_sccs(order_of_sccs=topological,merge_selector=score_based_filtering(scoring_functions=[goal_relevance,dfp,total_order])),shrink_strategy=shrink_bisimulation(greedy=false)))";
 
 
 #Other software available is
