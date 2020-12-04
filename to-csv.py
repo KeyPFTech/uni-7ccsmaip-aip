@@ -4,6 +4,7 @@ import pandas as pd #wireframe
 import matplotlib.pyplot as plt
 import math # ceiling value for plot axix max
 import seaborn as sns # colour plots
+from sklearn.cluster import KMeans #https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html 
 
 # get data
 def get_data(file_names, path):
@@ -145,11 +146,16 @@ def remove_fluff(stats):
 def to_df(data, name):
     df = pd.DataFrame(data)
     df= df.rename(columns={0:"Plan length", 1: "Plan cost", 2:"Expanded state(s)", 3:"Reopened state(s)", 4:"Evaluated state(s)", 5:"Evaluations", 6:"Generates state(s)", 7:"Deadends", 8:"Expanded until last jump", 9:"Reopened until last jump", 10:"Evaluated until last jump", 11:"Generated until last jump", 12:"Number of registered states", 13:"Int hash set load factor", 14:"Int hash set resizes", 15:"Search time", 16:"Total time", 17: "Solution found?", 18:"Peak memory", 19:"Remove intermediate file output.sas", 20:"Search exit code"})
-    path = "output-" + name + ".xlsx"
-    df.to_excel(path) # Write df to excel
+    if 21 in df:
+        del df[21]
+    #path = "output-" + name + ".xlsx"
+    #df.to_excel(path) # Write df to excel
     return df
 
-
+def annotate(df, h, d):
+    #print("hello world")
+    df["Heuristic"] = h
+    df["Domain"] = d
 
 
 ### MAIN ###
@@ -176,7 +182,7 @@ mas_file_names = ["mas-inst1.txt", "mas-inst2.txt",
                 "mas-inst17.txt", "mas-inst18.txt",
                 "mas-inst19.txt", "mas-inst20.txt"] # planner for instance 19 & 20 failed
 
-
+"""
 path = "plans-satisficing/"
 print("SATISFICING")
 
@@ -190,25 +196,65 @@ data = []
 get_data(mas_file_names, path)
 df_sat_mas = to_df(data, "satis-mas")
 print("Complete 2")
-
-
-path = "plans-optimal/"
-print("OPTIMAL")
+"""
+### visit all
+path = "plans-optimal/visitall/"
+print("VISITALL")
 
 data = []
 get_data(add_file_names, path)
-df_opt_add = to_df(data, "opt-add")
-print("Complete 3")
-
+df_visitall_add = to_df(data, "visitall-opt-add")
+print("Complete visitall ADD")
 
 data = []
 get_data(mas_file_names, path)
-df_opt_mas = to_df(data, "opt-mas")
-print("Complete 4")
+df_visitall_mas = to_df(data, "visitall-opt-mas")
+print("Complete visitall M&S")
+
+### tidybot
+path = "plans-optimal/tidybot/"
+print("TIDYBOT")
+
+data = []
+get_data(add_file_names, path)
+df_tidybot_add = to_df(data, "tidybot-opt-add")
+print("Complete tidybot ADD")
+
+data = []
+get_data(mas_file_names, path)
+df_tidybot_mas = to_df(data, "tidybot-opt-mas")
+print("Complete tidybot M&S")
 
 
+print("COMPLETE formatting")
+
+# annotates origin and merges all to a single dataframe
+annotate(df_visitall_add, "Additive", "visitall")
+annotate(df_visitall_mas, "Merge & Shrink", "visitall")
+annotate(df_tidybot_add, "Additive", "tidybot")
+annotate(df_tidybot_mas, "Merge & Shrink", "tidybot")
+
+frames = [df_visitall_add, df_visitall_mas, df_tidybot_add, df_tidybot_mas]
+df_all = pd.concat(frames)
+df_all = df_all.reset_index(drop=True)
+print("COMPLETE concatenating")
 
 
+df = df_all[["Search time", "Peak memory"]]
+df.info(verbose = False)
+df = df.dropna()
+print("---")
+df.info(verbose = False)
+
+kmeans = KMeans(n_clusters = 7, n_init = 20, random_state= 1000).fit(df) #more than n 7 the clusters sit on top of each other, deterministic seeding for randomness
+centroids = kmeans.cluster_centers_
+print(centroids)
+
+"""
+plt.scatter(df['Search time'], df['Peak memory'], alpha = 0.5) #alpha fades, c = kmeans.labels_.astype(float)
+plt.scatter(centroids[:, 0], centroids[:, 1], c = 'red')
+plt.show()
+"""
 
 
 
